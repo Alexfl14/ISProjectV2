@@ -1,41 +1,35 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
 
-#include <QWidget>
-#include <QString>
-#include <QLabel>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
+#include <string>
+#include <functional>
 
-class MainMenu : public QWidget
-{
-    Q_OBJECT
+class MainWindow;
 
+class MainMenu {
 public:
-    explicit MainMenu(QWidget* parent = nullptr);
+    explicit MainMenu(MainWindow* mainWindow);
     ~MainMenu();
 
-signals:
-    void startNewGame(const QString& playerName);
-    void continueGame();
-    void quitRequested();
-
-private slots:
-    void onNewGameClicked();
-    void onContinueClicked();
-    void onQuitClicked();
+    void update();
+    void draw();
 
 private:
-    void setupUI();
+    void drawBackground();
+    void drawTitle();
+    void drawNameInput();
+    void drawButtons();
+    void handleInput();
 
-    QLabel* m_lblTitle;
-    QLabel* m_lblSubtitle;
-    QLabel* m_lblNamePrompt;
-    QLineEdit* m_txtPlayerName;
-    QPushButton* m_btnNewGame;
-    QPushButton* m_btnQuit;
+    MainWindow* m_mainWindow;
+    std::string m_playerName;
+    bool m_nameInputActive;
+    
+    // UI Constants
+    static constexpr int BUTTON_WIDTH = 250;
+    static constexpr int BUTTON_HEIGHT = 60;
+    static constexpr int INPUT_WIDTH = 400;
+    static constexpr int INPUT_HEIGHT = 50;
 };
 
-#endif
+#endif // MAINMENU_H

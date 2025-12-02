@@ -1,83 +1,95 @@
-﻿#include "MainWindow.h"
+#include "MainWindow.h"
 #include "MainMenu.h"
 #include "GameWindow.h"
-#include <QApplication>
-#include <QMessageBox>
-#include <QScreen>
+#include "raylib.h"
 
-MainWindow::MainWindow(QWidget* parent)
-    : QMainWindow(parent)
-    , m_stackedWidget(new QStackedWidget(this))
-    , m_mainMenu(nullptr)
-    , m_gameWindow(nullptr)
+MainWindow::MainWindow()
+    : m_currentState(WindowState::MainMenu)
+    , m_shouldClose(false)
 {
-    setupWindow();
-
-    m_mainMenu = new MainMenu(this);
-    m_stackedWidget->addWidget(m_mainMenu);
-    setCentralWidget(m_stackedWidget);
-
-    connect(m_mainMenu, &MainMenu::startNewGame, this, &MainWindow::handleStartNewGame);
-    connect(m_mainMenu, &MainMenu::quitRequested, this, &MainWindow::handleQuitRequested);
+    init();
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
+    cleanup();
 }
 
-void MainWindow::setupWindow()
-{
-    QScreen* screen = QApplication::primaryScreen();
-    QRect screenGeometry = screen->availableGeometry();
-    int width = screenGeometry.width() * 0.85;
-    int height = screenGeometry.height() * 0.85;
-    int x = (screenGeometry.width() - width) / 2;
-    int y = (screenGeometry.height() - height) / 2;
-
-    setGeometry(x, y, width, height);
-    setMinimumSize(1024, 768);
-    setWindowTitle("Blackjack - NeoSpace Casino");
-    setStyleSheet("background-color: #0a0f1e;");
+void MainWindow::init() {
+    // Initialize window
+    const int screenWidth = 1280;
+    const int screenHeight = 720;
+    
+    InitWindow(screenWidth, screenHeight, "Blackjack - NeoSpace Casino");
+    SetTargetFPS(60);
+    
+    // Create main menu
+    m_mainMenu = std::make_unique<MainMenu>(this);
 }
 
-void MainWindow::handleStartNewGame(const QString& playerName)
-{
+void MainWindow::run() {
+    while (!WindowShouldClose() && !m_shouldClose) {
+        update();
+        draw();
+    }
+}
+
+void MainWindow::update() {
+    switch (m_currentState) {
+        case WindowState::MainMenu:
+            if (m_mainMenu) {
+                m_mainMenu->update();
+            }
+            break;
+        case WindowState::Game:
+            if (m_gameWindow) {
+                m_gameWindow->update();
+            }
+            break;
+    }
+}
+
+void MainWindow::draw() {
+    BeginDrawing();
+    ClearBackground(CLITERAL(Color){10, 15, 30, 255}); // #0a0f1e
+    
+    switch (m_currentState) {
+        case WindowState::MainMenu:
+            if (m_mainMenu) {
+                m_mainMenu->draw();
+            }
+            break;
+        case WindowState::Game:
+            if (m_gameWindow) {
+                m_gameWindow->draw();
+            }
+            break;
+    }
+    
+    EndDrawing();
+}
+
+void MainWindow::handleStartNewGame(const std::string& playerName) {
+    // Clean up existing game window if any
     if (m_gameWindow) {
-        m_stackedWidget->removeWidget(m_gameWindow);
-        delete m_gameWindow;
-        m_gameWindow = nullptr;
+        m_gameWindow.reset();
     }
-
-    m_gameWindow = new GameWindow(playerName, this);
-    connect(m_gameWindow, &GameWindow::returnToMenu, this, &MainWindow::returnToMainMenu);
-    m_stackedWidget->addWidget(m_gameWindow);
-    m_stackedWidget->setCurrentWidget(m_gameWindow);
+    
+    // Create new game window
+    m_gameWindow = std::make_unique<GameWindow>(playerName, this);
+    m_currentState = WindowState::Game;
 }
 
-void MainWindow::handleContinueGame()
-{
-    if (m_gameWindow) {
-        m_stackedWidget->setCurrentWidget(m_gameWindow);
-    }
-    else {
-        QMessageBox msgBox(this);
-        msgBox.setWindowTitle("No Game");
-        msgBox.setText("No game in progress. Please start a new game!");
-        msgBox.setStyleSheet(
-            "QMessageBox { background-color: #11182C; }"
-            "QMessageBox QLabel { color: #00FFFF; font-size: 14px; }"
-            "QPushButton { background-color: #11182C; color: #00FFFF; border: 2px solid #00FFFF; border-radius: 5px; padding: 8px 20px; }"
-        );
-        msgBox.exec();
-    }
+void MainWindow::returnToMainMenu() {
+    m_currentState = WindowState::MainMenu;
+    // Keep game window alive in case player wants to continue
 }
 
-void MainWindow::handleQuitRequested()
-{
-    QApplication::quit();
+void MainWindow::handleQuit() {
+    m_shouldClose = true;
 }
 
-void MainWindow::returnToMainMenu()
-{
-    m_stackedWidget->setCurrentWidget(m_mainMenu);
+void MainWindow::cleanup() {
+    m_gameWindow.reset();
+    m_mainMenu.reset();
+    CloseWindow();
 }

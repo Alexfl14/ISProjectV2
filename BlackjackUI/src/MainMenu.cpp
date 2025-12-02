@@ -1,149 +1,165 @@
 #include "MainMenu.h"
-#include <QMessageBox>
-#include <QGraphicsDropShadowEffect>
+#include "MainWindow.h"
+#include "raylib.h"
+#include <algorithm>
 
-MainMenu::MainMenu(QWidget* parent)
-    : QWidget(parent)
-{
-    setupUI();
-}
-
-MainMenu::~MainMenu()
+MainMenu::MainMenu(MainWindow* mainWindow)
+    : m_mainWindow(mainWindow)
+    , m_playerName("")
+    , m_nameInputActive(false)
 {
 }
 
-void MainMenu::setupUI()
-{
-    setStyleSheet("background-color: #0a0f1e;");
-
-    QVBoxLayout* mainLayout = new QVBoxLayout(this);
-    mainLayout->setSpacing(20);
-    mainLayout->setContentsMargins(50, 50, 50, 50);
-
-    mainLayout->addStretch(2);
-
-    m_lblTitle = new QLabel("NEOSPACE", this);
-    m_lblTitle->setAlignment(Qt::AlignCenter);
-    m_lblTitle->setStyleSheet(
-        "QLabel { color: #00FFFF; font-size: 72px; font-weight: bold; "
-        "font-family: 'Segoe UI', Arial; background-color: transparent; letter-spacing: 15px; }"
-    );
-    mainLayout->addWidget(m_lblTitle);
-
-    m_lblSubtitle = new QLabel("BLACKJACK", this);
-    m_lblSubtitle->setAlignment(Qt::AlignCenter);
-    m_lblSubtitle->setStyleSheet(
-        "QLabel { color: #FFD700; font-size: 48px; font-weight: bold; "
-        "font-family: 'Segoe UI', Arial; background-color: transparent; letter-spacing: 20px; }"
-    );
-    mainLayout->addWidget(m_lblSubtitle);
-
-    mainLayout->addStretch(1);
-
-    QWidget* inputContainer = new QWidget(this);
-    inputContainer->setMaximumWidth(500);
-    inputContainer->setStyleSheet("background-color: transparent;");
-    QVBoxLayout* inputLayout = new QVBoxLayout(inputContainer);
-    inputLayout->setSpacing(15);
-
-    m_lblNamePrompt = new QLabel("Enter your name:", this);
-    m_lblNamePrompt->setAlignment(Qt::AlignCenter);
-    m_lblNamePrompt->setStyleSheet(
-        "QLabel { color: #FFFFFF; font-size: 18px; font-family: 'Segoe UI', Arial; background-color: transparent; }"
-    );
-    inputLayout->addWidget(m_lblNamePrompt);
-
-    m_txtPlayerName = new QLineEdit(this);
-    m_txtPlayerName->setPlaceholderText("Player Name");
-    m_txtPlayerName->setAlignment(Qt::AlignCenter);
-    m_txtPlayerName->setMinimumHeight(50);
-    m_txtPlayerName->setStyleSheet(
-        "QLineEdit { background-color: #11182C; color: #00FFFF; border: 2px solid #00FFFF; "
-        "border-radius: 10px; padding: 10px 20px; font-size: 20px; font-family: 'Segoe UI', Arial; }"
-        "QLineEdit:focus { border: 2px solid #FFD700; }"
-        "QLineEdit::placeholder { color: #555566; }"
-    );
-    inputLayout->addWidget(m_txtPlayerName);
-
-    QHBoxLayout* inputCenterLayout = new QHBoxLayout();
-    inputCenterLayout->addStretch();
-    inputCenterLayout->addWidget(inputContainer);
-    inputCenterLayout->addStretch();
-    mainLayout->addLayout(inputCenterLayout);
-
-    mainLayout->addStretch(1);
-
-    QWidget* buttonContainer = new QWidget(this);
-    buttonContainer->setStyleSheet("background-color: transparent;");
-    QVBoxLayout* buttonLayout = new QVBoxLayout(buttonContainer);
-    buttonLayout->setSpacing(15);
-
-    QString buttonStyle =
-        "QPushButton { background-color: #11182C; color: #00FFFF; border: 2px solid #00FFFF; "
-        "border-radius: 12px; padding: 15px 60px; font-size: 20px; font-weight: bold; "
-        "font-family: 'Segoe UI', Arial; min-width: 250px; }"
-        "QPushButton:hover { background-color: #1a2744; border-color: #FFD700; color: #FFD700; }"
-        "QPushButton:pressed { background-color: #0a0f1a; }";
-
-    m_btnNewGame = new QPushButton("NEW GAME", this);
-    m_btnNewGame->setStyleSheet(buttonStyle);
-    m_btnNewGame->setCursor(Qt::PointingHandCursor);
-    connect(m_btnNewGame, &QPushButton::clicked, this, &MainMenu::onNewGameClicked);
-    buttonLayout->addWidget(m_btnNewGame, 0, Qt::AlignCenter);
-
-    QString quitButtonStyle =
-        "QPushButton { background-color: #1a0a0a; color: #FF4444; border: 2px solid #FF4444; "
-        "border-radius: 12px; padding: 15px 60px; font-size: 20px; font-weight: bold; "
-        "font-family: 'Segoe UI', Arial; min-width: 250px; }"
-        "QPushButton:hover { background-color: #2a1a1a; border-color: #FF6666; color: #FF6666; }"
-        "QPushButton:pressed { background-color: #0a0505; }";
-
-    m_btnQuit = new QPushButton("QUIT", this);
-    m_btnQuit->setStyleSheet(quitButtonStyle);
-    m_btnQuit->setCursor(Qt::PointingHandCursor);
-    connect(m_btnQuit, &QPushButton::clicked, this, &MainMenu::onQuitClicked);
-    buttonLayout->addWidget(m_btnQuit, 0, Qt::AlignCenter);
-
-    QHBoxLayout* buttonCenterLayout = new QHBoxLayout();
-    buttonCenterLayout->addStretch();
-    buttonCenterLayout->addWidget(buttonContainer);
-    buttonCenterLayout->addStretch();
-    mainLayout->addLayout(buttonCenterLayout);
-
-    mainLayout->addStretch(2);
-
-    QLabel* lblFooter = new QLabel("© 2024 NeoSpace Casino - Play Responsibly", this);
-    lblFooter->setAlignment(Qt::AlignCenter);
-    lblFooter->setStyleSheet(
-        "QLabel { color: #555566; font-size: 12px; font-family: 'Segoe UI', Arial; background-color: transparent; }"
-    );
-    mainLayout->addWidget(lblFooter);
+MainMenu::~MainMenu() {
 }
 
-void MainMenu::onNewGameClicked()
-{
-    QString name = m_txtPlayerName->text().trimmed();
-    if (name.isEmpty()) {
-        QMessageBox msgBox(this);
-        msgBox.setWindowTitle("Name Required");
-        msgBox.setText("Please enter your name to start the game!");
-        msgBox.setStyleSheet(
-            "QMessageBox { background-color: #11182C; }"
-            "QMessageBox QLabel { color: #00FFFF; font-size: 14px; }"
-            "QPushButton { background-color: #11182C; color: #00FFFF; border: 2px solid #00FFFF; "
-            "border-radius: 5px; padding: 8px 20px; font-size: 14px; }"
-        );
-        msgBox.exec();
-        return;
+void MainMenu::update() {
+    handleInput();
+}
+
+void MainMenu::draw() {
+    drawBackground();
+    drawTitle();
+    drawNameInput();
+    drawButtons();
+}
+
+void MainMenu::drawBackground() {
+    // Background is already cleared by MainWindow
+}
+
+void MainMenu::drawTitle() {
+    int screenWidth = GetScreenWidth();
+    int screenHeight = GetScreenHeight();
+    
+    // Main title "NEOSPACE"
+    const char* title = "NEOSPACE";
+    int titleFontSize = 72;
+    int titleWidth = MeasureText(title, titleFontSize);
+    DrawText(title, (screenWidth - titleWidth) / 2, screenHeight / 6,
+             titleFontSize, CLITERAL(Color){0, 255, 255, 255}); // Cyan
+    
+    // Subtitle "BLACKJACK"
+    const char* subtitle = "BLACKJACK";
+    int subtitleFontSize = 48;
+    int subtitleWidth = MeasureText(subtitle, subtitleFontSize);
+    DrawText(subtitle, (screenWidth - subtitleWidth) / 2, screenHeight / 6 + 90,
+             subtitleFontSize, CLITERAL(Color){255, 215, 0, 255}); // Gold
+}
+
+void MainMenu::drawNameInput() {
+    int screenWidth = GetScreenWidth();
+    int screenHeight = GetScreenHeight();
+    
+    int inputX = (screenWidth - INPUT_WIDTH) / 2;
+    int inputY = screenHeight / 2 - 50;
+    
+    // Prompt text
+    const char* prompt = "Enter your name:";
+    int promptFontSize = 18;
+    int promptWidth = MeasureText(prompt, promptFontSize);
+    DrawText(prompt, (screenWidth - promptWidth) / 2, inputY - 40,
+             promptFontSize, WHITE);
+    
+    // Input box
+    Rectangle inputBox = {(float)inputX, (float)inputY, (float)INPUT_WIDTH, (float)INPUT_HEIGHT};
+    
+    Color borderColor = m_nameInputActive ? CLITERAL(Color){255, 215, 0, 255} : CLITERAL(Color){0, 255, 255, 255};
+    DrawRectangleRec(inputBox, CLITERAL(Color){17, 24, 44, 255}); // #11182C
+    DrawRectangleLinesEx(inputBox, 2, borderColor);
+    
+    // Check if clicked
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        Vector2 mousePos = GetMousePosition();
+        m_nameInputActive = CheckCollisionPointRec(mousePos, inputBox);
     }
-    emit startNewGame(name);
+    
+    // Handle text input
+    if (m_nameInputActive) {
+        int key = GetCharPressed();
+        while (key > 0) {
+            if ((key >= 32) && (key <= 125) && m_playerName.length() < 20) {
+                m_playerName += (char)key;
+            }
+            key = GetCharPressed();
+        }
+        
+        if (IsKeyPressed(KEY_BACKSPACE) && !m_playerName.empty()) {
+            m_playerName.pop_back();
+        }
+    }
+    
+    // Draw text or placeholder
+    const char* displayText = m_playerName.empty() ? "Player Name" : m_playerName.c_str();
+    Color textColor = m_playerName.empty() ? CLITERAL(Color){85, 85, 102, 255} : CLITERAL(Color){0, 255, 255, 255};
+    
+    int textFontSize = 20;
+    int textWidth = MeasureText(displayText, textFontSize);
+    DrawText(displayText, inputX + (INPUT_WIDTH - textWidth) / 2, 
+             inputY + (INPUT_HEIGHT - textFontSize) / 2, textFontSize, textColor);
 }
 
-void MainMenu::onContinueClicked()
-{
+void MainMenu::drawButtons() {
+    int screenWidth = GetScreenWidth();
+    int screenHeight = GetScreenHeight();
+    
+    int buttonX = (screenWidth - BUTTON_WIDTH) / 2;
+    int newGameY = screenHeight / 2 + 80;
+    int quitY = newGameY + BUTTON_HEIGHT + 20;
+    
+    // NEW GAME button
+    Rectangle newGameBtn = {(float)buttonX, (float)newGameY, (float)BUTTON_WIDTH, (float)BUTTON_HEIGHT};
+    Vector2 mousePos = GetMousePosition();
+    bool newGameHover = CheckCollisionPointRec(mousePos, newGameBtn);
+    
+    Color newGameBg = newGameHover ? CLITERAL(Color){26, 39, 68, 255} : CLITERAL(Color){17, 24, 44, 255};
+    Color newGameBorder = newGameHover ? CLITERAL(Color){255, 215, 0, 255} : CLITERAL(Color){0, 255, 255, 255};
+    Color newGameTextColor = newGameHover ? CLITERAL(Color){255, 215, 0, 255} : CLITERAL(Color){0, 255, 255, 255};
+    
+    DrawRectangleRounded(newGameBtn, 0.2f, 8, newGameBg);
+    DrawRectangleRoundedLines(newGameBtn, 0.2f, 8, newGameBorder);
+    
+    const char* newGameTextStr = "NEW GAME";
+    int newGameTextWidth = MeasureText(newGameTextStr, 20);
+    DrawText(newGameTextStr, buttonX + (BUTTON_WIDTH - newGameTextWidth) / 2,
+             newGameY + (BUTTON_HEIGHT - 20) / 2, 20, newGameTextColor);
+    
+    if (newGameHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        if (m_playerName.empty()) {
+            // Show error - player name required (simple version)
+        } else {
+            m_mainWindow->handleStartNewGame(m_playerName);
+        }
+    }
+    
+    // QUIT button
+    Rectangle quitBtn = {(float)buttonX, (float)quitY, (float)BUTTON_WIDTH, (float)BUTTON_HEIGHT};
+    bool quitHover = CheckCollisionPointRec(mousePos, quitBtn);
+    
+    Color quitBg = quitHover ? CLITERAL(Color){42, 26, 26, 255} : CLITERAL(Color){26, 10, 10, 255};
+    Color quitBorder = quitHover ? CLITERAL(Color){255, 102, 102, 255} : CLITERAL(Color){255, 68, 68, 255};
+    Color quitTextColor = quitHover ? CLITERAL(Color){255, 102, 102, 255} : CLITERAL(Color){255, 68, 68, 255};
+    
+    DrawRectangleRounded(quitBtn, 0.2f, 8, quitBg);
+    DrawRectangleRoundedLines(quitBtn, 0.2f, 8,quitBorder);
+    
+    const char* quitText = "QUIT";
+    int quitTextWidth = MeasureText(quitText, 20);
+    DrawText(quitText, buttonX + (BUTTON_WIDTH - quitTextWidth) / 2,
+             quitY + (BUTTON_HEIGHT - 20) / 2, 20, quitTextColor);
+    
+    if (quitHover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        m_mainWindow->handleQuit();
+    }
+    
+    // Footer
+    const char* footer = "Â© 2024 NeoSpace Casino - Play Responsibly";
+    int footerFontSize = 12;
+    int footerWidth = MeasureText(footer, footerFontSize);
+    DrawText(footer, (screenWidth - footerWidth) / 2, screenHeight - 40,
+             footerFontSize, CLITERAL(Color){85, 85, 102, 255});
 }
 
-void MainMenu::onQuitClicked()
-{
-    emit quitRequested();
+void MainMenu::handleInput() {
+    // Input handling is done in draw functions for immediate visual feedback
 }

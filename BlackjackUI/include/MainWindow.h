@@ -1,33 +1,38 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QStackedWidget>
-#include <QString>
+#include <string>
+#include <memory>
 
 class MainMenu;
 class GameWindow;
 
-class MainWindow : public QMainWindow
-{
-    Q_OBJECT
-
-public:
-    explicit MainWindow(QWidget* parent = nullptr);
-    ~MainWindow();
-
-private slots:
-    void handleStartNewGame(const QString& playerName);
-    void handleContinueGame();
-    void handleQuitRequested();
-    void returnToMainMenu();
-
-private:
-    void setupWindow();
-
-    QStackedWidget* m_stackedWidget;
-    MainMenu* m_mainMenu;
-    GameWindow* m_gameWindow;
+enum class WindowState {
+    MainMenu,
+    Game
 };
 
-#endif
+class MainWindow {
+public:
+    MainWindow();
+    ~MainWindow();
+
+    void run();
+    
+    void handleStartNewGame(const std::string& playerName);
+    void returnToMainMenu();
+    void handleQuit();
+
+private:
+    void init();
+    void update();
+    void draw();
+    void cleanup();
+
+    WindowState m_currentState;
+    std::unique_ptr<MainMenu> m_mainMenu;
+    std::unique_ptr<GameWindow> m_gameWindow;
+    bool m_shouldClose;
+};
+
+#endif // MAINWINDOW_H
