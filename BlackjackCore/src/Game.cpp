@@ -1,9 +1,10 @@
 ﻿#include "Game.h"
 #include "Card.h"
+#include "StandardDealerStrategy.h"
 #include <algorithm>
 
 Game::Game(int initialBalance)
-    : deckPtr(&realDeck), player(initialBalance)
+    : deckPtr(&realDeck), player(initialBalance), dealerStrategy(std::make_unique<StandardDealerStrategy>())
 {
     realDeck.shuffle();
 }
@@ -11,6 +12,13 @@ Game::Game(int initialBalance)
 void Game::forceDeck(IDeck* fake)
 {
     this->deckPtr = fake;
+}
+
+void Game::setDealerStrategy(std::unique_ptr<IDealerStrategy> strategy)
+{
+    if (strategy) {
+        dealerStrategy = std::move(strategy);
+    }
 }
 
 void Game::notify(const std::string& event)
@@ -330,7 +338,8 @@ void Game::dealerPlay()
 {
     player.resolveInsurance(dealerBlackjack);
 
-    while (dealerHand.getTotal() < 17)
+    // Use strategy pattern to determine when dealer should hit
+    while (dealerStrategy && dealerStrategy->shouldHit(dealerHand))
     {
         if (auto c = deckPtr->draw())
         {

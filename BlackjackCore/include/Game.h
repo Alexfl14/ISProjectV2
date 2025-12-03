@@ -2,6 +2,7 @@
 
 #include "interfaces/IGame.h"
 #include "interfaces/IDeck.h"
+#include "interfaces/IDealerStrategy.h"
 #include "enums/EGameResult.h"
 #include "Deck.h"
 #include "interfaces/IPlayer.h"
@@ -9,6 +10,7 @@
 #include "Hand.h"
 #include <vector>
 #include <string>
+#include <memory>
 
 class Game : public IGame {
 private:
@@ -16,6 +18,7 @@ private:
     Deck realDeck;
     Player player;
     Hand dealerHand;
+    std::unique_ptr<IDealerStrategy> dealerStrategy;
 
     enum class ActiveHand { NONE, MAIN, SPLIT, DONE };
     ActiveHand activeHand = ActiveHand::NONE;
@@ -45,6 +48,7 @@ public:
     explicit Game(int initialBalance = 1000);
 
     void forceDeck(IDeck* fake);
+    void setDealerStrategy(std::unique_ptr<IDealerStrategy> strategy);
 
     void addObserver(IObserver* observer) override;
     void removeObserver(IObserver* observer) override;
