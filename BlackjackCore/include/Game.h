@@ -14,8 +14,8 @@
 
 class Game : public IGame {
 private:
-    IDeck* deckPtr;
     Deck realDeck;
+    IDeck* deckPtr;
     Player player;
     Hand dealerHand;
     std::unique_ptr<IDealerStrategy> dealerStrategy;
@@ -45,10 +45,17 @@ private:
     bool isBlackjack(const IHand& hand) const;
 
 public:
-    explicit Game(int initialBalance = 1000);
+    explicit Game(int initialBalance = 1000, int numberOfDecks = 6, bool autoReshuffle = true);
 
     void forceDeck(IDeck* fake);
     void setDealerStrategy(std::unique_ptr<IDealerStrategy> strategy);
+
+    // New methods to control deck randomness
+    void setNumberOfDecks(int numDecks);
+    int getNumberOfDecks() const;
+    void setAutoReshuffle(bool enable);
+    bool getAutoReshuffle() const;
+    IDeck& getDeck();
 
     void addObserver(IObserver* observer) override;
     void removeObserver(IObserver* observer) override;

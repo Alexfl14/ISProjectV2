@@ -3,10 +3,11 @@
 #include "StandardDealerStrategy.h"
 #include <algorithm>
 
-Game::Game(int initialBalance)
-    : deckPtr(&realDeck), player(initialBalance), dealerStrategy(std::make_unique<StandardDealerStrategy>())
+Game::Game(int initialBalance, int numberOfDecks, bool autoReshuffle)
+    : realDeck(numberOfDecks, autoReshuffle), deckPtr(&realDeck), player(initialBalance),
+      dealerStrategy(std::make_unique<StandardDealerStrategy>())
 {
-    realDeck.shuffle();
+    // Deck is already shuffled in its constructor
 }
 
 void Game::forceDeck(IDeck* fake)
@@ -47,8 +48,10 @@ void Game::removeObserver(IObserver* observer)
 
 void Game::reset()
 {
-    realDeck = Deck();
-    realDeck.shuffle();
+    // Preserve deck configuration when resetting
+    int numDecks = realDeck.getNumberOfDecks();
+    bool autoRes = realDeck.getAutoReshuffle();
+    realDeck = Deck(numDecks, autoRes);
     deckPtr = &realDeck;
 
     player.resetForNewRound();
@@ -507,4 +510,29 @@ IPlayer& Game::getPlayer()
 const IPlayer& Game::getPlayer() const
 {
     return player;
+}
+
+void Game::setNumberOfDecks(int numDecks)
+{
+    realDeck.setNumberOfDecks(numDecks);
+}
+
+int Game::getNumberOfDecks() const
+{
+    return realDeck.getNumberOfDecks();
+}
+
+void Game::setAutoReshuffle(bool enable)
+{
+    realDeck.setAutoReshuffle(enable);
+}
+
+bool Game::getAutoReshuffle() const
+{
+    return realDeck.getAutoReshuffle();
+}
+
+IDeck& Game::getDeck()
+{
+    return realDeck;
 }
