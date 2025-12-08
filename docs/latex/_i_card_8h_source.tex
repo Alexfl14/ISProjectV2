@@ -1,0 +1,23 @@
+\doxysection{ICard.\+h}
+\hypertarget{_i_card_8h_source}{}\label{_i_card_8h_source}\index{BlackjackCore/include/interfaces/ICard.h@{BlackjackCore/include/interfaces/ICard.h}}
+\mbox{\hyperlink{_i_card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_suit_8h}{enums/ESuit.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_card_value_8h}{enums/ECardValue.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_card}{ICard}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_card_a2a52d135c153419cd54e659c45b8d0b1}{\string~ICard}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_e_suit_8h_a1cb1c98e7a0680daec0fb0d85dc6deda}{ESuit}}\ \mbox{\hyperlink{class_i_card_a4dd306967ac5a588619aaf6583110dae}{getSuit}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_e_card_value_8h_a1cf338b5478466a532d2311820e384ea}{ECardValue}}\ \mbox{\hyperlink{class_i_card_a0452c7f2b8d97054ef17f2c7f502fca4}{getValue}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_card_a1e2da2ba0adb389cf429ee5ce1bf8109}{isHidden}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_card_a3c59159b77707f6545189fb8a371e8be}{reveal}}()\ =\ 0;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_card}{ICard}}*\ \mbox{\hyperlink{class_i_card_a500a21e3f2223d3d83ad3a8a333d82e8}{clone}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00017\ \};}
+
+\end{DoxyCode}

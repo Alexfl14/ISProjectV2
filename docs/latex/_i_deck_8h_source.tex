@@ -1,0 +1,19 @@
+\doxysection{IDeck.\+h}
+\hypertarget{_i_deck_8h_source}{}\label{_i_deck_8h_source}\index{BlackjackCore/include/interfaces/IDeck.h@{BlackjackCore/include/interfaces/IDeck.h}}
+\mbox{\hyperlink{_i_deck_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_card_8h}{ICard.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_deck}{IDeck}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_deck_a72ea48498b69ae28cfab0c5f557fe499}{shuffle}}()\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<ICard>\ \mbox{\hyperlink{class_i_deck_a311db0412b81042f6d38141483eb32f4}{draw}}()\ =\ 0;\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_deck_a4528ea9aaa1937e735e9ca3bd7830824}{size}}()\ \textcolor{keyword}{const}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_deck_aeb8b19cfd224252cc8200a90ba1d0f69}{\string~IDeck}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00013\ \};}
+
+\end{DoxyCode}

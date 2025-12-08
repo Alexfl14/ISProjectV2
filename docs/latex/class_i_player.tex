@@ -1,0 +1,290 @@
+\doxysection{IPlayer Class Reference}
+\hypertarget{class_i_player}{}\label{class_i_player}\index{IPlayer@{IPlayer}}
+
+
+{\ttfamily \#include $<$IPlayer.\+h$>$}
+
+Inheritance diagram for IPlayer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_player_a51fad967141534e6267e19ff3a76bc69}{\texorpdfstring{$\sim$}{\string~}\+IPlayer}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_i_player_a7833ec3862b715502bbb849a4f814340}{get\+Balance}} () const =0
+\item 
+virtual int \mbox{\hyperlink{class_i_player_a3623e68a6034cb7a3728279cf387b0d2}{get\+Current\+Bet}} () const =0
+\item 
+virtual int \mbox{\hyperlink{class_i_player_a0532a332ab4f065cd8e502df2c20c7ec}{get\+Insurance\+Bet}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_player_a08e8b4541673b8521837deb0286c5263}{add\+To\+Balance}} (int amount)=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_player_a2ffdb67915cac57348f10737ea11cd96}{bet}} (int amount)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_player_a120ffcff4ba32455b67241e8a1ca704a}{clear\+Bet}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_player_a13b0597538dd3f2005a52fe809778b82}{take\+Insurance}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_player_acc3b02e1e31ab29afd13414c227e5ee6}{double\+Down}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_player_adc433ad3e43c6a84da0ef21a8a202c98}{can\+Split}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_player_a25a47dd5ccc2987c40db05d8c5f33d26}{perform\+Split}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_player_a983a15c2754b0e9ab6dc7497b064e911}{has\+Split\+Hand}} () const =0
+\item 
+virtual \mbox{\hyperlink{class_i_hand}{IHand}} \& \mbox{\hyperlink{class_i_player_acb84f2b3955c2c693c69acdc00bcbc1c}{get\+Main\+Hand}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_hand}{IHand}} \& \mbox{\hyperlink{class_i_player_a9ef223d1c4f0f8097d9bf91e7bab9115}{get\+Split\+Hand}} ()=0
+\item 
+virtual const \mbox{\hyperlink{class_i_hand}{IHand}} \& \mbox{\hyperlink{class_i_player_af83cb8f0f65dacfe590b5d3866a089f5}{get\+Main\+Hand}} () const =0
+\item 
+virtual const \mbox{\hyperlink{class_i_hand}{IHand}} \& \mbox{\hyperlink{class_i_player_abf1c1b2241d8451d396b56ba1510c106}{get\+Split\+Hand}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_player_ac805a3b5643a54aca0006b934c53b8f2}{win}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_player_a1f47f3680902b539c8e84506b535f0f4}{blackjack\+Win}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_player_a6eafb99a8725893596e14e6a10abac39}{push}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_player_a666a7ff967123d10f9ca340ab8698bc2}{lose}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_player_ae5a3650bc6764c3595b469377966c90b}{resolve\+Insurance}} (bool dealer\+Has\+Blackjack)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_player_a526abf61a93a60563c1ca8d53dccc3cc}{reset\+For\+New\+Round}} ()=0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_i_player_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_player_a51fad967141534e6267e19ff3a76bc69}\index{IPlayer@{IPlayer}!````~IPlayer@{\texorpdfstring{$\sim$}{\string~}IPlayer}}
+\index{````~IPlayer@{\texorpdfstring{$\sim$}{\string~}IPlayer}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IPlayer()}{\string~IPlayer()}}
+{\footnotesize\ttfamily \label{class_i_player_a51fad967141534e6267e19ff3a76bc69} 
+virtual IPlayer\+::\texorpdfstring{$\sim$}{\string~}\+IPlayer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_player_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_player_a08e8b4541673b8521837deb0286c5263}\index{IPlayer@{IPlayer}!addToBalance@{addToBalance}}
+\index{addToBalance@{addToBalance}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{addToBalance()}{addToBalance()}}
+{\footnotesize\ttfamily \label{class_i_player_a08e8b4541673b8521837deb0286c5263} 
+virtual void IPlayer\+::add\+To\+Balance (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_acce951e84a93a92834a8176b6b452360}{Player}}.
+
+\Hypertarget{class_i_player_a2ffdb67915cac57348f10737ea11cd96}\index{IPlayer@{IPlayer}!bet@{bet}}
+\index{bet@{bet}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{bet()}{bet()}}
+{\footnotesize\ttfamily \label{class_i_player_a2ffdb67915cac57348f10737ea11cd96} 
+virtual bool IPlayer\+::bet (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_aba6f9764455fc32e95688a3cd70ab3e0}{Player}}.
+
+\Hypertarget{class_i_player_a1f47f3680902b539c8e84506b535f0f4}\index{IPlayer@{IPlayer}!blackjackWin@{blackjackWin}}
+\index{blackjackWin@{blackjackWin}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{blackjackWin()}{blackjackWin()}}
+{\footnotesize\ttfamily \label{class_i_player_a1f47f3680902b539c8e84506b535f0f4} 
+virtual void IPlayer\+::blackjack\+Win (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a6a7b37215c5ddcfb32856050a2329adc}{Player}}.
+
+\Hypertarget{class_i_player_adc433ad3e43c6a84da0ef21a8a202c98}\index{IPlayer@{IPlayer}!canSplit@{canSplit}}
+\index{canSplit@{canSplit}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{canSplit()}{canSplit()}}
+{\footnotesize\ttfamily \label{class_i_player_adc433ad3e43c6a84da0ef21a8a202c98} 
+virtual bool IPlayer\+::can\+Split (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a42ab2018594847b769857353c5a9273c}{Player}}.
+
+\Hypertarget{class_i_player_a120ffcff4ba32455b67241e8a1ca704a}\index{IPlayer@{IPlayer}!clearBet@{clearBet}}
+\index{clearBet@{clearBet}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{clearBet()}{clearBet()}}
+{\footnotesize\ttfamily \label{class_i_player_a120ffcff4ba32455b67241e8a1ca704a} 
+virtual void IPlayer\+::clear\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a13d97422a94c0f3ffaabfd92ec12895a}{Player}}.
+
+\Hypertarget{class_i_player_acc3b02e1e31ab29afd13414c227e5ee6}\index{IPlayer@{IPlayer}!doubleDown@{doubleDown}}
+\index{doubleDown@{doubleDown}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{doubleDown()}{doubleDown()}}
+{\footnotesize\ttfamily \label{class_i_player_acc3b02e1e31ab29afd13414c227e5ee6} 
+virtual bool IPlayer\+::double\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a094242b3ddc2b1eeda595ec9e9dff230}{Player}}.
+
+\Hypertarget{class_i_player_a7833ec3862b715502bbb849a4f814340}\index{IPlayer@{IPlayer}!getBalance@{getBalance}}
+\index{getBalance@{getBalance}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{getBalance()}{getBalance()}}
+{\footnotesize\ttfamily \label{class_i_player_a7833ec3862b715502bbb849a4f814340} 
+virtual int IPlayer\+::get\+Balance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_ad16b68cc5c4b24435bc679a28e198f3e}{Player}}.
+
+\Hypertarget{class_i_player_a3623e68a6034cb7a3728279cf387b0d2}\index{IPlayer@{IPlayer}!getCurrentBet@{getCurrentBet}}
+\index{getCurrentBet@{getCurrentBet}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{getCurrentBet()}{getCurrentBet()}}
+{\footnotesize\ttfamily \label{class_i_player_a3623e68a6034cb7a3728279cf387b0d2} 
+virtual int IPlayer\+::get\+Current\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a7c3203a9a5f77b409460292e5db879ca}{Player}}.
+
+\Hypertarget{class_i_player_a0532a332ab4f065cd8e502df2c20c7ec}\index{IPlayer@{IPlayer}!getInsuranceBet@{getInsuranceBet}}
+\index{getInsuranceBet@{getInsuranceBet}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{getInsuranceBet()}{getInsuranceBet()}}
+{\footnotesize\ttfamily \label{class_i_player_a0532a332ab4f065cd8e502df2c20c7ec} 
+virtual int IPlayer\+::get\+Insurance\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a143d2d47a50f2fb0436bc67a152dcf5a}{Player}}.
+
+\Hypertarget{class_i_player_af83cb8f0f65dacfe590b5d3866a089f5}\index{IPlayer@{IPlayer}!getMainHand@{getMainHand}}
+\index{getMainHand@{getMainHand}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{getMainHand()}{getMainHand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_i_player_af83cb8f0f65dacfe590b5d3866a089f5} 
+virtual const \mbox{\hyperlink{class_i_hand}{IHand}} \& IPlayer\+::get\+Main\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a88447e3fd5c86a0eb895265afe6e2aea}{Player}}.
+
+\Hypertarget{class_i_player_acb84f2b3955c2c693c69acdc00bcbc1c}\index{IPlayer@{IPlayer}!getMainHand@{getMainHand}}
+\index{getMainHand@{getMainHand}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{getMainHand()}{getMainHand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_i_player_acb84f2b3955c2c693c69acdc00bcbc1c} 
+virtual \mbox{\hyperlink{class_i_hand}{IHand}} \& IPlayer\+::get\+Main\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a8220d5edf2e1766842279658b8187783}{Player}}.
+
+\Hypertarget{class_i_player_abf1c1b2241d8451d396b56ba1510c106}\index{IPlayer@{IPlayer}!getSplitHand@{getSplitHand}}
+\index{getSplitHand@{getSplitHand}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{getSplitHand()}{getSplitHand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_i_player_abf1c1b2241d8451d396b56ba1510c106} 
+virtual const \mbox{\hyperlink{class_i_hand}{IHand}} \& IPlayer\+::get\+Split\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_aedba16efa5e9efd9bbc9b9d6a03f63b8}{Player}}.
+
+\Hypertarget{class_i_player_a9ef223d1c4f0f8097d9bf91e7bab9115}\index{IPlayer@{IPlayer}!getSplitHand@{getSplitHand}}
+\index{getSplitHand@{getSplitHand}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{getSplitHand()}{getSplitHand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_i_player_a9ef223d1c4f0f8097d9bf91e7bab9115} 
+virtual \mbox{\hyperlink{class_i_hand}{IHand}} \& IPlayer\+::get\+Split\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_ab19bdffb18b0fefc081d6dc877a8ac6f}{Player}}.
+
+\Hypertarget{class_i_player_a983a15c2754b0e9ab6dc7497b064e911}\index{IPlayer@{IPlayer}!hasSplitHand@{hasSplitHand}}
+\index{hasSplitHand@{hasSplitHand}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{hasSplitHand()}{hasSplitHand()}}
+{\footnotesize\ttfamily \label{class_i_player_a983a15c2754b0e9ab6dc7497b064e911} 
+virtual bool IPlayer\+::has\+Split\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a79093d9e7c131f204f44b43ca37b81c3}{Player}}.
+
+\Hypertarget{class_i_player_a666a7ff967123d10f9ca340ab8698bc2}\index{IPlayer@{IPlayer}!lose@{lose}}
+\index{lose@{lose}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{lose()}{lose()}}
+{\footnotesize\ttfamily \label{class_i_player_a666a7ff967123d10f9ca340ab8698bc2} 
+virtual void IPlayer\+::lose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a9a439c44a8856ce4d78d693b85bb184c}{Player}}.
+
+\Hypertarget{class_i_player_a25a47dd5ccc2987c40db05d8c5f33d26}\index{IPlayer@{IPlayer}!performSplit@{performSplit}}
+\index{performSplit@{performSplit}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{performSplit()}{performSplit()}}
+{\footnotesize\ttfamily \label{class_i_player_a25a47dd5ccc2987c40db05d8c5f33d26} 
+virtual void IPlayer\+::perform\+Split (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a57d65ca661e0e21f55876c2b11ac7153}{Player}}.
+
+\Hypertarget{class_i_player_a6eafb99a8725893596e14e6a10abac39}\index{IPlayer@{IPlayer}!push@{push}}
+\index{push@{push}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily \label{class_i_player_a6eafb99a8725893596e14e6a10abac39} 
+virtual void IPlayer\+::push (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a5444994d90867d820db05479fe2a899a}{Player}}.
+
+\Hypertarget{class_i_player_a526abf61a93a60563c1ca8d53dccc3cc}\index{IPlayer@{IPlayer}!resetForNewRound@{resetForNewRound}}
+\index{resetForNewRound@{resetForNewRound}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{resetForNewRound()}{resetForNewRound()}}
+{\footnotesize\ttfamily \label{class_i_player_a526abf61a93a60563c1ca8d53dccc3cc} 
+virtual void IPlayer\+::reset\+For\+New\+Round (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a917adfd54c7a7853e32917f3c63cc634}{Player}}.
+
+\Hypertarget{class_i_player_ae5a3650bc6764c3595b469377966c90b}\index{IPlayer@{IPlayer}!resolveInsurance@{resolveInsurance}}
+\index{resolveInsurance@{resolveInsurance}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{resolveInsurance()}{resolveInsurance()}}
+{\footnotesize\ttfamily \label{class_i_player_ae5a3650bc6764c3595b469377966c90b} 
+virtual void IPlayer\+::resolve\+Insurance (\begin{DoxyParamCaption}\item[{bool}]{dealer\+Has\+Blackjack}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a5c465484d5aab89e5727e17e01059c77}{Player}}.
+
+\Hypertarget{class_i_player_a13b0597538dd3f2005a52fe809778b82}\index{IPlayer@{IPlayer}!takeInsurance@{takeInsurance}}
+\index{takeInsurance@{takeInsurance}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{takeInsurance()}{takeInsurance()}}
+{\footnotesize\ttfamily \label{class_i_player_a13b0597538dd3f2005a52fe809778b82} 
+virtual bool IPlayer\+::take\+Insurance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a113914c283ad3111e2395856452b095e}{Player}}.
+
+\Hypertarget{class_i_player_ac805a3b5643a54aca0006b934c53b8f2}\index{IPlayer@{IPlayer}!win@{win}}
+\index{win@{win}!IPlayer@{IPlayer}}
+\doxysubsubsection{\texorpdfstring{win()}{win()}}
+{\footnotesize\ttfamily \label{class_i_player_ac805a3b5643a54aca0006b934c53b8f2} 
+virtual void IPlayer\+::win (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a95f2a19213e2fdf7bf0e205831cb10e5}{Player}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Blackjack\+Core/include/interfaces/\mbox{\hyperlink{_i_player_8h}{IPlayer.\+h}}\end{DoxyCompactItemize}

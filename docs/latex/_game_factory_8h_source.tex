@@ -1,0 +1,16 @@
+\doxysection{Game\+Factory.\+h}
+\hypertarget{_game_factory_8h_source}{}\label{_game_factory_8h_source}\index{BlackjackCore/include/GameFactory.h@{BlackjackCore/include/GameFactory.h}}
+\mbox{\hyperlink{_game_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_game_factory_8h}{interfaces/IGameFactory.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_factory}{GameFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_game_factory}{IGameFactory}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{class_i_game}{IGame}}*\ \mbox{\hyperlink{class_game_factory_a167c70f30d96ae8a55ad8639807077a9}{createGame}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00007\ \ \ \ \ }
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_i_game}{IGame}}*\ \mbox{\hyperlink{class_game_factory_a5c96a83ce577b2b8a2c70796c531ae86}{createGameWithStandardRules}}();}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_i_game}{IGame}}*\ \mbox{\hyperlink{class_game_factory_af485090194a7b33dca4c9daa9e341ecb}{createGameWithSoft17Rules}}();}
+\DoxyCodeLine{00010\ \};}
+
+\end{DoxyCode}

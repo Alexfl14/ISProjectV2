@@ -1,0 +1,98 @@
+\doxysection{ICard Class Reference}
+\hypertarget{class_i_card}{}\label{class_i_card}\index{ICard@{ICard}}
+
+
+{\ttfamily \#include $<$ICard.\+h$>$}
+
+Inheritance diagram for ICard\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_card}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_card_a2a52d135c153419cd54e659c45b8d0b1}{\texorpdfstring{$\sim$}{\string~}\+ICard}} ()=default
+\item 
+virtual \mbox{\hyperlink{_e_suit_8h_a1cb1c98e7a0680daec0fb0d85dc6deda}{ESuit}} \mbox{\hyperlink{class_i_card_a4dd306967ac5a588619aaf6583110dae}{get\+Suit}} () const =0
+\item 
+virtual \mbox{\hyperlink{_e_card_value_8h_a1cf338b5478466a532d2311820e384ea}{ECard\+Value}} \mbox{\hyperlink{class_i_card_a0452c7f2b8d97054ef17f2c7f502fca4}{get\+Value}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{class_i_card_a1e2da2ba0adb389cf429ee5ce1bf8109}{is\+Hidden}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_card_a3c59159b77707f6545189fb8a371e8be}{reveal}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_card}{ICard}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_i_card_a500a21e3f2223d3d83ad3a8a333d82e8}{clone}} () const =0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_i_card_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_card_a2a52d135c153419cd54e659c45b8d0b1}\index{ICard@{ICard}!````~ICard@{\texorpdfstring{$\sim$}{\string~}ICard}}
+\index{````~ICard@{\texorpdfstring{$\sim$}{\string~}ICard}!ICard@{ICard}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ICard()}{\string~ICard()}}
+{\footnotesize\ttfamily \label{class_i_card_a2a52d135c153419cd54e659c45b8d0b1} 
+virtual ICard\+::\texorpdfstring{$\sim$}{\string~}\+ICard (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_card_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_card_a500a21e3f2223d3d83ad3a8a333d82e8}\index{ICard@{ICard}!clone@{clone}}
+\index{clone@{clone}!ICard@{ICard}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_i_card_a500a21e3f2223d3d83ad3a8a333d82e8} 
+virtual \mbox{\hyperlink{class_i_card}{ICard}} \texorpdfstring{$\ast$}{*} ICard\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_card_ae83ca4c4d7d329111b1532b2584c519c}{Card}}.
+
+\Hypertarget{class_i_card_a4dd306967ac5a588619aaf6583110dae}\index{ICard@{ICard}!getSuit@{getSuit}}
+\index{getSuit@{getSuit}!ICard@{ICard}}
+\doxysubsubsection{\texorpdfstring{getSuit()}{getSuit()}}
+{\footnotesize\ttfamily \label{class_i_card_a4dd306967ac5a588619aaf6583110dae} 
+virtual \mbox{\hyperlink{_e_suit_8h_a1cb1c98e7a0680daec0fb0d85dc6deda}{ESuit}} ICard\+::get\+Suit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_card_af5bdac6f694c17b40ad3b7ce18ad4bf9}{Card}}.
+
+\Hypertarget{class_i_card_a0452c7f2b8d97054ef17f2c7f502fca4}\index{ICard@{ICard}!getValue@{getValue}}
+\index{getValue@{getValue}!ICard@{ICard}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily \label{class_i_card_a0452c7f2b8d97054ef17f2c7f502fca4} 
+virtual \mbox{\hyperlink{_e_card_value_8h_a1cf338b5478466a532d2311820e384ea}{ECard\+Value}} ICard\+::get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_card_aac10aeed8291356686b7b3e293591bc0}{Card}}.
+
+\Hypertarget{class_i_card_a1e2da2ba0adb389cf429ee5ce1bf8109}\index{ICard@{ICard}!isHidden@{isHidden}}
+\index{isHidden@{isHidden}!ICard@{ICard}}
+\doxysubsubsection{\texorpdfstring{isHidden()}{isHidden()}}
+{\footnotesize\ttfamily \label{class_i_card_a1e2da2ba0adb389cf429ee5ce1bf8109} 
+virtual bool ICard\+::is\+Hidden (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_card_a7cf6a46f94ae29f76bcf6e5255488a1c}{Card}}.
+
+\Hypertarget{class_i_card_a3c59159b77707f6545189fb8a371e8be}\index{ICard@{ICard}!reveal@{reveal}}
+\index{reveal@{reveal}!ICard@{ICard}}
+\doxysubsubsection{\texorpdfstring{reveal()}{reveal()}}
+{\footnotesize\ttfamily \label{class_i_card_a3c59159b77707f6545189fb8a371e8be} 
+virtual void ICard\+::reveal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_card_a98906a8eaf11d8bd7513f9f14646b26b}{Card}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Blackjack\+Core/include/interfaces/\mbox{\hyperlink{_i_card_8h}{ICard.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\doxysection{IDeck Class Reference}
+\hypertarget{class_i_deck}{}\label{class_i_deck}\index{IDeck@{IDeck}}
+
+
+{\ttfamily \#include $<$IDeck.\+h$>$}
+
+Inheritance diagram for IDeck\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_deck}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_deck_a72ea48498b69ae28cfab0c5f557fe499}{shuffle}} ()=0
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_card}{ICard}} $>$ \mbox{\hyperlink{class_i_deck_a311db0412b81042f6d38141483eb32f4}{draw}} ()=0
+\item 
+virtual int \mbox{\hyperlink{class_i_deck_a4528ea9aaa1937e735e9ca3bd7830824}{size}} () const =0
+\item 
+virtual \mbox{\hyperlink{class_i_deck_aeb8b19cfd224252cc8200a90ba1d0f69}{\texorpdfstring{$\sim$}{\string~}\+IDeck}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_i_deck_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_deck_aeb8b19cfd224252cc8200a90ba1d0f69}\index{IDeck@{IDeck}!````~IDeck@{\texorpdfstring{$\sim$}{\string~}IDeck}}
+\index{````~IDeck@{\texorpdfstring{$\sim$}{\string~}IDeck}!IDeck@{IDeck}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IDeck()}{\string~IDeck()}}
+{\footnotesize\ttfamily \label{class_i_deck_aeb8b19cfd224252cc8200a90ba1d0f69} 
+virtual IDeck\+::\texorpdfstring{$\sim$}{\string~}\+IDeck (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_deck_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_deck_a311db0412b81042f6d38141483eb32f4}\index{IDeck@{IDeck}!draw@{draw}}
+\index{draw@{draw}!IDeck@{IDeck}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_i_deck_a311db0412b81042f6d38141483eb32f4} 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_card}{ICard}} $>$ IDeck\+::draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_deck_ab15fc77a192f1c737b4f9b07893dfca0}{Deck}}.
+
+\Hypertarget{class_i_deck_a72ea48498b69ae28cfab0c5f557fe499}\index{IDeck@{IDeck}!shuffle@{shuffle}}
+\index{shuffle@{shuffle}!IDeck@{IDeck}}
+\doxysubsubsection{\texorpdfstring{shuffle()}{shuffle()}}
+{\footnotesize\ttfamily \label{class_i_deck_a72ea48498b69ae28cfab0c5f557fe499} 
+virtual void IDeck\+::shuffle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_deck_a208c1e10a88eb25b85d741975f762be3}{Deck}}.
+
+\Hypertarget{class_i_deck_a4528ea9aaa1937e735e9ca3bd7830824}\index{IDeck@{IDeck}!size@{size}}
+\index{size@{size}!IDeck@{IDeck}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_i_deck_a4528ea9aaa1937e735e9ca3bd7830824} 
+virtual int IDeck\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_deck_a3acf930155bca2a0fecf9e5ab195def2}{Deck}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Blackjack\+Core/include/interfaces/\mbox{\hyperlink{_i_deck_8h}{IDeck.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+\doxysection{Game\+State Struct Reference}
+\hypertarget{struct_game_state}{}\label{struct_game_state}\index{GameState@{GameState}}
+
+
+{\ttfamily \#include $<$Game\+State.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_game_state_a9410695cad5f0a5f9fcc368125cbe8b7}{main\+Total}} = 0
+\item 
+int \mbox{\hyperlink{struct_game_state_a9883bf8218fe4db57474c54d1f059545}{split\+Total}} = -\/1
+\item 
+int \mbox{\hyperlink{struct_game_state_a29eae32b71776f9c9b28b172216565d7}{dealer\+Total}} = 0
+\item 
+bool \mbox{\hyperlink{struct_game_state_a9a1a163f9df3f1a0f2baed1b5c8fe49a}{split\+Allowed}} = false
+\item 
+bool \mbox{\hyperlink{struct_game_state_a1b0e3e3c017605518e223746b693f2f9}{double\+Allowed}} = false
+\item 
+bool \mbox{\hyperlink{struct_game_state_a70ceb347f79cc165aa4bcbcaeee2c6a9}{insurance\+Allowed}} = false
+\item 
+bool \mbox{\hyperlink{struct_game_state_ab1c23de6b5105ffa23cad0180e68a203}{split\+Active}} = false
+\item 
+bool \mbox{\hyperlink{struct_game_state_ac7c2d4506ab7d4d10624ba9e67d24b9e}{round\+Started}} = false
+\item 
+bool \mbox{\hyperlink{struct_game_state_a5091485bf9de86a2b7e6882c9e3f51dd}{game\+Over}} = false
+\item 
+bool \mbox{\hyperlink{struct_game_state_a458c6dde03dafc677e16e186933cd442}{dealer\+Hidden}} = false
+\item 
+\mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ad}{EGame\+Result}} \mbox{\hyperlink{struct_game_state_aac24819374a51d492a3e9c0e3c363afb}{result\+Main}} = \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ada6adf97f83acf6453d4a6a4b1070f3754}{EGame\+Result\+::\+None}}
+\item 
+\mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ad}{EGame\+Result}} \mbox{\hyperlink{struct_game_state_a6c45f2b6916a642800c0434aa78723c0}{result\+Split}} = \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ada6adf97f83acf6453d4a6a4b1070f3754}{EGame\+Result\+::\+None}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_game_state_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_game_state_a458c6dde03dafc677e16e186933cd442}\index{GameState@{GameState}!dealerHidden@{dealerHidden}}
+\index{dealerHidden@{dealerHidden}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{dealerHidden}{dealerHidden}}
+{\footnotesize\ttfamily \label{struct_game_state_a458c6dde03dafc677e16e186933cd442} 
+bool Game\+State\+::dealer\+Hidden = false}
+
+\Hypertarget{struct_game_state_a29eae32b71776f9c9b28b172216565d7}\index{GameState@{GameState}!dealerTotal@{dealerTotal}}
+\index{dealerTotal@{dealerTotal}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{dealerTotal}{dealerTotal}}
+{\footnotesize\ttfamily \label{struct_game_state_a29eae32b71776f9c9b28b172216565d7} 
+int Game\+State\+::dealer\+Total = 0}
+
+\Hypertarget{struct_game_state_a1b0e3e3c017605518e223746b693f2f9}\index{GameState@{GameState}!doubleAllowed@{doubleAllowed}}
+\index{doubleAllowed@{doubleAllowed}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{doubleAllowed}{doubleAllowed}}
+{\footnotesize\ttfamily \label{struct_game_state_a1b0e3e3c017605518e223746b693f2f9} 
+bool Game\+State\+::double\+Allowed = false}
+
+\Hypertarget{struct_game_state_a5091485bf9de86a2b7e6882c9e3f51dd}\index{GameState@{GameState}!gameOver@{gameOver}}
+\index{gameOver@{gameOver}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{gameOver}{gameOver}}
+{\footnotesize\ttfamily \label{struct_game_state_a5091485bf9de86a2b7e6882c9e3f51dd} 
+bool Game\+State\+::game\+Over = false}
+
+\Hypertarget{struct_game_state_a70ceb347f79cc165aa4bcbcaeee2c6a9}\index{GameState@{GameState}!insuranceAllowed@{insuranceAllowed}}
+\index{insuranceAllowed@{insuranceAllowed}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{insuranceAllowed}{insuranceAllowed}}
+{\footnotesize\ttfamily \label{struct_game_state_a70ceb347f79cc165aa4bcbcaeee2c6a9} 
+bool Game\+State\+::insurance\+Allowed = false}
+
+\Hypertarget{struct_game_state_a9410695cad5f0a5f9fcc368125cbe8b7}\index{GameState@{GameState}!mainTotal@{mainTotal}}
+\index{mainTotal@{mainTotal}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{mainTotal}{mainTotal}}
+{\footnotesize\ttfamily \label{struct_game_state_a9410695cad5f0a5f9fcc368125cbe8b7} 
+int Game\+State\+::main\+Total = 0}
+
+\Hypertarget{struct_game_state_aac24819374a51d492a3e9c0e3c363afb}\index{GameState@{GameState}!resultMain@{resultMain}}
+\index{resultMain@{resultMain}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{resultMain}{resultMain}}
+{\footnotesize\ttfamily \label{struct_game_state_aac24819374a51d492a3e9c0e3c363afb} 
+\mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ad}{EGame\+Result}} Game\+State\+::result\+Main = \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ada6adf97f83acf6453d4a6a4b1070f3754}{EGame\+Result\+::\+None}}}
+
+\Hypertarget{struct_game_state_a6c45f2b6916a642800c0434aa78723c0}\index{GameState@{GameState}!resultSplit@{resultSplit}}
+\index{resultSplit@{resultSplit}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{resultSplit}{resultSplit}}
+{\footnotesize\ttfamily \label{struct_game_state_a6c45f2b6916a642800c0434aa78723c0} 
+\mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ad}{EGame\+Result}} Game\+State\+::result\+Split = \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ada6adf97f83acf6453d4a6a4b1070f3754}{EGame\+Result\+::\+None}}}
+
+\Hypertarget{struct_game_state_ac7c2d4506ab7d4d10624ba9e67d24b9e}\index{GameState@{GameState}!roundStarted@{roundStarted}}
+\index{roundStarted@{roundStarted}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{roundStarted}{roundStarted}}
+{\footnotesize\ttfamily \label{struct_game_state_ac7c2d4506ab7d4d10624ba9e67d24b9e} 
+bool Game\+State\+::round\+Started = false}
+
+\Hypertarget{struct_game_state_ab1c23de6b5105ffa23cad0180e68a203}\index{GameState@{GameState}!splitActive@{splitActive}}
+\index{splitActive@{splitActive}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{splitActive}{splitActive}}
+{\footnotesize\ttfamily \label{struct_game_state_ab1c23de6b5105ffa23cad0180e68a203} 
+bool Game\+State\+::split\+Active = false}
+
+\Hypertarget{struct_game_state_a9a1a163f9df3f1a0f2baed1b5c8fe49a}\index{GameState@{GameState}!splitAllowed@{splitAllowed}}
+\index{splitAllowed@{splitAllowed}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{splitAllowed}{splitAllowed}}
+{\footnotesize\ttfamily \label{struct_game_state_a9a1a163f9df3f1a0f2baed1b5c8fe49a} 
+bool Game\+State\+::split\+Allowed = false}
+
+\Hypertarget{struct_game_state_a9883bf8218fe4db57474c54d1f059545}\index{GameState@{GameState}!splitTotal@{splitTotal}}
+\index{splitTotal@{splitTotal}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{splitTotal}{splitTotal}}
+{\footnotesize\ttfamily \label{struct_game_state_a9883bf8218fe4db57474c54d1f059545} 
+int Game\+State\+::split\+Total = -\/1}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Blackjack\+Core/include/\mbox{\hyperlink{_game_state_8h}{Game\+State.\+h}}\end{DoxyCompactItemize}

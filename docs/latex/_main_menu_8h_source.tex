@@ -1,0 +1,41 @@
+\doxysection{Main\+Menu.\+h}
+\hypertarget{_main_menu_8h_source}{}\label{_main_menu_8h_source}\index{BlackjackUI/include/MainMenu.h@{BlackjackUI/include/MainMenu.h}}
+\mbox{\hyperlink{_main_menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINMENU\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINMENU\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_menu_a8eb167a79c44ca3524b3fd398fc6d608}{MainMenu}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_main_menu_a8eb167a79c44ca3524b3fd398fc6d608}{MainMenu}}(\mbox{\hyperlink{class_main_window}{MainWindow}}*\ mainWindow);}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_main_menu_a0a19ddba3ac52bf39c09b579171c98f2}{\string~MainMenu}}();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_a48b4cca0867e474809c7c3ff1cd069f7}{update}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_a6c17addf154519404a791d3c2a40a2aa}{draw}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBackground();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ drawTitle();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ drawNameInput();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ drawButtons();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ handleInput();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}*\ m\_mainWindow;}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ m\_playerName;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_nameInputActive;}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ UI\ Constants}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ BUTTON\_WIDTH\ =\ 250;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ BUTTON\_HEIGHT\ =\ 60;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ INPUT\_WIDTH\ =\ 400;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ INPUT\_HEIGHT\ =\ 50;}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINMENU\_H}}
+
+\end{DoxyCode}

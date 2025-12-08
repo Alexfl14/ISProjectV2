@@ -1,0 +1,24 @@
+\doxysection{Deck.\+h}
+\hypertarget{_deck_8h_source}{}\label{_deck_8h_source}\index{BlackjackCore/include/Deck.h@{BlackjackCore/include/Deck.h}}
+\mbox{\hyperlink{_deck_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_deck_8h}{interfaces/IDeck.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_card_8h}{Card.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_deck_a57ae1cb4ac6fd61c249cefb2db85eb99}{Deck}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_deck}{IDeck}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ std::vector<std::unique\_ptr<ICard>>\ cards;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_deck_a57ae1cb4ac6fd61c249cefb2db85eb99}{Deck}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_deck_a208c1e10a88eb25b85d741975f762be3}{shuffle}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ std::unique\_ptr<ICard>\ \mbox{\hyperlink{class_deck_ab15fc77a192f1c737b4f9b07893dfca0}{draw}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_deck_a3acf930155bca2a0fecf9e5ab195def2}{size}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00018\ \};}
+
+\end{DoxyCode}

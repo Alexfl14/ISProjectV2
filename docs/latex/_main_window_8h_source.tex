@@ -1,0 +1,44 @@
+\doxysection{Main\+Window.\+h}
+\hypertarget{_main_window_8h_source}{}\label{_main_window_8h_source}\index{BlackjackUI/include/MainWindow.h@{BlackjackUI/include/MainWindow.h}}
+\mbox{\hyperlink{_main_window_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_menu}{MainMenu}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_window}{GameWindow}};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_main_window_8h_a7688310f9a1664a9fc20b8989418de4a}{WindowState}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_main_menu}{MainMenu}},}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window_a34c4b4207b46d11a4100c9b19f0e81bb}{MainWindow}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_main_window_a34c4b4207b46d11a4100c9b19f0e81bb}{MainWindow}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa506f7b11499c888e70d2cb9bf5a1f6a}{run}}();}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aee401014822ed2565786dace909f6ef1}{handleStartNewGame}}(\textcolor{keyword}{const}\ std::string\&\ playerName);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a67c47576cc7dd05338618cef3591d57e}{returnToMainMenu}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a004f8020ae9c66c85d18d08045518d2a}{handleQuit}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ init();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ draw();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanup();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{_main_window_8h_a7688310f9a1664a9fc20b8989418de4a}{WindowState}}\ m\_currentState;}
+\DoxyCodeLine{00033\ \ \ \ \ std::unique\_ptr<MainMenu>\ m\_mainMenu;}
+\DoxyCodeLine{00034\ \ \ \ \ std::unique\_ptr<GameWindow>\ m\_gameWindow;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_shouldClose;}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

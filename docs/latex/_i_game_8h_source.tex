@@ -1,0 +1,32 @@
+\doxysection{IGame.\+h}
+\hypertarget{_i_game_8h_source}{}\label{_i_game_8h_source}\index{BlackjackCore/include/interfaces/IGame.h@{BlackjackCore/include/interfaces/IGame.h}}
+\mbox{\hyperlink{_i_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_hand_8h}{IHand.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_observer_8h}{IObserver.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_state_8h}{GameState.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_game}{IGame}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_subject}{ISubject}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_game_a91b14c1b6019364120d5c5e4d4c64414}{\string~IGame}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_af174e89498832afc7458be23a6ebc3a6}{startGame}}()\ =\ 0;\ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_a19ef043eb7d0e90742fc5b21511951bd}{hit}}()\ =\ 0;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_af3bd5683190ff135b7a32d3442f4a45e}{stand}}()\ =\ 0;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_game_a45a6211515827c108c0456b0230a547c}{reset}}()\ =\ 0;\ \ \ \ \ \ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_game_addc155ad6815c251b174f5cc9f9a3656}{requestBet}}(\textcolor{keywordtype}{int}\ amount)\ =\ 0;\ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_game_a321d67d99b827d51c36d462daf4655ba}{requestClearBet}}()\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_game_aa1c7f24f74c4431fa108eb12023e1d98}{requestSplit}}()\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_game_a7b337d5287811f3bac974646c2165d1a}{requestDoubleDown}}()\ =\ 0;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_game_a62913be1cfdf4f788f65f5dd522f1602}{requestInsurance}}()\ =\ 0;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_hand}{IHand}}\&\ \mbox{\hyperlink{class_i_game_a1de26bf78f1a2391e4eabe061fb10ed8}{getPlayerHand}}()\ \textcolor{keyword}{const}\ =\ 0;\ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_hand}{IHand}}\&\ \mbox{\hyperlink{class_i_game_a61276ba36ba7a0b2cd760d4c67bf56dd}{getDealerHand}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_game_state}{GameState}}\ \mbox{\hyperlink{class_i_game_a44de7e08e7ee294be051445a84306299}{getState}}()\ \textcolor{keyword}{const}\ =\ 0;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \};}
+
+\end{DoxyCode}

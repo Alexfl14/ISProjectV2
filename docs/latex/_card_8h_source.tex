@@ -1,0 +1,31 @@
+\doxysection{Card.\+h}
+\hypertarget{_card_8h_source}{}\label{_card_8h_source}\index{BlackjackCore/include/Card.h@{BlackjackCore/include/Card.h}}
+\mbox{\hyperlink{_card_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_card_8h}{interfaces/ICard.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_card_acdb4711fd94fe245610d73914c08d804}{Card}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_card}{ICard}}\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{_e_suit_8h_a1cb1c98e7a0680daec0fb0d85dc6deda}{ESuit}}\ suit;}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{_e_card_value_8h_a1cf338b5478466a532d2311820e384ea}{ECardValue}}\ value;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{bool}\ faceDown;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_card_acdb4711fd94fe245610d73914c08d804}{Card}}(\mbox{\hyperlink{_e_suit_8h_a1cb1c98e7a0680daec0fb0d85dc6deda}{ESuit}}\ s,\ \mbox{\hyperlink{_e_card_value_8h_a1cf338b5478466a532d2311820e384ea}{ECardValue}}\ v,\ \textcolor{keywordtype}{bool}\ hidden\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ :\ suit(s),\ value(v),\ faceDown(hidden)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{_e_suit_8h_a1cb1c98e7a0680daec0fb0d85dc6deda}{ESuit}}\ \mbox{\hyperlink{class_card_af5bdac6f694c17b40ad3b7ce18ad4bf9}{getSuit}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ suit;\ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{_e_card_value_8h_a1cf338b5478466a532d2311820e384ea}{ECardValue}}\ \mbox{\hyperlink{class_card_aac10aeed8291356686b7b3e293591bc0}{getValue}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ value;\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_card_a7cf6a46f94ae29f76bcf6e5255488a1c}{isHidden}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ faceDown;\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_card_a98906a8eaf11d8bd7513f9f14646b26b}{reveal}}()\textcolor{keyword}{\ override\ }\{\ faceDown\ =\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_i_card}{ICard}}*\ \mbox{\hyperlink{class_card_ae83ca4c4d7d329111b1532b2584c519c}{clone}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_card_acdb4711fd94fe245610d73914c08d804}{Card}}(suit,\ value,\ faceDown);}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,16 @@
+var searchData=
+[
+  ['removecardat_0',['removeCardAt',['../class_hand.html#a661dbc95863f51fc12c5a053566432cd',1,'Hand::removeCardAt()'],['../class_i_hand.html#a44a1af76cad47c0dcc2706b9d9ccd552',1,'IHand::removeCardAt()']]],
+  ['removeobserver_1',['removeObserver',['../class_game.html#ae9aa700c7de3e34c2964bd1fa8307ccf',1,'Game::removeObserver()'],['../class_i_subject.html#a9c3c18703e8588c15ab1361137a8d449',1,'ISubject::removeObserver()']]],
+  ['requestbet_2',['requestBet',['../class_game.html#a84b16d04a05673674b2a9ee375de0b28',1,'Game::requestBet()'],['../class_i_game.html#addc155ad6815c251b174f5cc9f9a3656',1,'IGame::requestBet()']]],
+  ['requestclearbet_3',['requestClearBet',['../class_game.html#ab76cb37e82e51ee6d5d4a1269055d7e5',1,'Game::requestClearBet()'],['../class_i_game.html#a321d67d99b827d51c36d462daf4655ba',1,'IGame::requestClearBet()']]],
+  ['requestdoubledown_4',['requestDoubleDown',['../class_game.html#a051891e2d3e2f1d3e71e5ffd02ac356d',1,'Game::requestDoubleDown()'],['../class_i_game.html#a7b337d5287811f3bac974646c2165d1a',1,'IGame::requestDoubleDown()']]],
+  ['requestinsurance_5',['requestInsurance',['../class_game.html#a7dc57abf4608e551dc4b1deadc4b248f',1,'Game::requestInsurance()'],['../class_i_game.html#a62913be1cfdf4f788f65f5dd522f1602',1,'IGame::requestInsurance()']]],
+  ['requestsplit_6',['requestSplit',['../class_game.html#ae7ef996605eb71eca8632a4ce61374cc',1,'Game::requestSplit()'],['../class_i_game.html#aa1c7f24f74c4431fa108eb12023e1d98',1,'IGame::requestSplit()']]],
+  ['reset_7',['reset',['../class_game.html#a70619d2cf0a6447303bf0c5542bbb682',1,'Game::reset()'],['../class_i_game.html#a45a6211515827c108c0456b0230a547c',1,'IGame::reset()']]],
+  ['resetfornewround_8',['resetForNewRound',['../class_i_player.html#a526abf61a93a60563c1ca8d53dccc3cc',1,'IPlayer::resetForNewRound()'],['../class_player.html#a917adfd54c7a7853e32917f3c63cc634',1,'Player::resetForNewRound()']]],
+  ['resolveinsurance_9',['resolveInsurance',['../class_i_player.html#ae5a3650bc6764c3595b469377966c90b',1,'IPlayer::resolveInsurance()'],['../class_player.html#a5c465484d5aab89e5727e17e01059c77',1,'Player::resolveInsurance()']]],
+  ['returntomainmenu_10',['returnToMainMenu',['../class_main_window.html#a67c47576cc7dd05338618cef3591d57e',1,'MainWindow']]],
+  ['reveal_11',['reveal',['../class_card.html#a98906a8eaf11d8bd7513f9f14646b26b',1,'Card::reveal()'],['../class_i_card.html#a3c59159b77707f6545189fb8a371e8be',1,'ICard::reveal()']]],
+  ['run_12',['run',['../class_main_window.html#aa506f7b11499c888e70d2cb9bf5a1f6a',1,'MainWindow']]]
+];
