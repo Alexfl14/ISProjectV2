@@ -9,6 +9,7 @@ set(TEST_SOURCES
     src/core_tests/GameFlowTests.cpp
     src/core_tests/HandTests.cpp
     src/core_tests/PlayerTests.cpp
+    src/core_tests/DealerStrategyTests.cpp
 )
 
 # Create Executable

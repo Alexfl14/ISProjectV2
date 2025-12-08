@@ -23,6 +23,11 @@ public:
         cards.push_back(std::move(c));
     }
 
+    void addCard(std::unique_ptr<ICard> c)
+    {
+        pushBack(std::move(c));
+    }
+
     void clear()
     {
         cards.clear();
