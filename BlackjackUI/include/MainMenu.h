@@ -2,7 +2,6 @@
 #define MAINMENU_H
 
 #include <string>
-#include <functional>
 
 class MainWindow;
 

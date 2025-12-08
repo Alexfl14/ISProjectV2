@@ -3,8 +3,6 @@
 #include "enums/EGameResult.h"
 
 struct GameState {
-
-    
     int mainTotal = 0;
     int splitTotal = -1;    
     int dealerTotal = 0;

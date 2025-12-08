@@ -9,7 +9,7 @@ GameWindow::GameWindow(const std::string& playerName, MainWindow* mainWindow)
     , m_game(1000)  // Starting balance of 1000
     , m_playerName(playerName)
     , m_currentBetAmount(0)
-    , m_currentPhase(GamePhase::Betting)
+    , m_currentPhase(EGamePhase::Betting)
     , m_hitEnabled(false)
     , m_standEnabled(false)
     , m_doubleEnabled(false)
@@ -28,13 +28,13 @@ GameWindow::~GameWindow() {
 
 void GameWindow::update() {
     switch (m_currentPhase) {
-        case GamePhase::Betting:
+        case EGamePhase::Betting:
             handleBettingInput();
             break;
-        case GamePhase::Playing:
+        case EGamePhase::Playing:
             handleGameplayInput();
             break;
-        case GamePhase::Result:
+        case EGamePhase::Result:
             handleResultInput();
             break;
     }
@@ -48,13 +48,13 @@ void GameWindow::draw() {
     drawPlayerCards();
     
     switch (m_currentPhase) {
-        case GamePhase::Betting:
+        case EGamePhase::Betting:
             drawBettingControls();
             break;
-        case GamePhase::Playing:
+        case EGamePhase::Playing:
             drawGameControls();
             break;
-        case GamePhase::Result:
+        case EGamePhase::Result:
             drawResultOverlay();
             drawGameControls();  // Show new round button
             break;
@@ -70,7 +70,7 @@ void GameWindow::onNotify(const std::string& eventName) {
         updateUI();
     } else if (eventName == "RoundFinished") {
         updateUI();
-        m_currentPhase = GamePhase::Result;
+        m_currentPhase = EGamePhase::Result;
         
         // Determine result message
         GameState state = m_game.getState();
@@ -313,7 +313,7 @@ void GameWindow::drawBettingControls() {
     if (dealClicked && m_currentBetAmount > 0) {
         // Start the game round - this will deal cards
         m_game.startGame();
-        m_currentPhase = GamePhase::Playing;
+        m_currentPhase = EGamePhase::Playing;
         checkAvailableActions();
     }
 }
@@ -324,7 +324,7 @@ void GameWindow::drawGameControls() {
     
     GameState state = m_game.getState();
     
-    if (m_currentPhase == GamePhase::Result) {
+    if (m_currentPhase == EGamePhase::Result) {
         // Show New Round button
         bool newRoundClicked = false;
         drawButton("NEW ROUND", (float)((screenWidth - 200) / 2), (float)(screenHeight - 80), 
@@ -332,7 +332,7 @@ void GameWindow::drawGameControls() {
         if (newRoundClicked) {
             m_game.reset();
             m_currentBetAmount = 0;
-            m_currentPhase = GamePhase::Betting;
+            m_currentPhase = EGamePhase::Betting;
             m_resultMessage = "";
         }
         return;
@@ -504,13 +504,13 @@ Color GameWindow::getSuitColor(const ICard* card) const {
 }
 
 void GameWindow::showBettingPhase() {
-    m_currentPhase = GamePhase::Betting;
+    m_currentPhase = EGamePhase::Betting;
 }
 
 void GameWindow::showGameplayPhase() {
-    m_currentPhase = GamePhase::Playing;
+    m_currentPhase = EGamePhase::Playing;
 }
 
 void GameWindow::showResultPhase() {
-    m_currentPhase = GamePhase::Result;
+    m_currentPhase = EGamePhase::Result;
 }

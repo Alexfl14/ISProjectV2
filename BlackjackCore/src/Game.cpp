@@ -3,6 +3,7 @@
 #include "StandardDealerStrategy.h"
 #include <algorithm>
 
+
 Game::Game(int initialBalance, int numberOfDecks, bool autoReshuffle)
     : realDeck(numberOfDecks, autoReshuffle), deckPtr(&realDeck), player(initialBalance),
       dealerStrategy(std::make_unique<StandardDealerStrategy>())
@@ -57,7 +58,7 @@ void Game::reset()
     player.resetForNewRound();
     dealerHand.clear();
 
-    activeHand = ActiveHand::NONE;
+    activeHand = EActiveHand::NONE;
     roundStarted = false;
     gameOver = false;
 
@@ -99,7 +100,7 @@ void Game::startGame()
 
     roundStarted = true;
     gameOver = false;
-    activeHand = ActiveHand::MAIN;
+    activeHand = EActiveHand::MAIN;
 
     splitAllowed = false;
     insuranceAllowed = false;
@@ -138,7 +139,7 @@ void Game::hit()
     {
         if (dealerBlackjack || isBlackjack(player.getMainHand()))
         {
-            activeHand = ActiveHand::DONE;
+            activeHand = EActiveHand::DONE;
             dealerHasHiddenCard = false;
             dealerPlay();
             evaluateHands();
@@ -150,7 +151,7 @@ void Game::hit()
 
     doubleAllowed = false;
 
-    if (activeHand == ActiveHand::MAIN)
+    if (activeHand == EActiveHand::MAIN)
     {
         if (auto c = deckPtr->draw())
         {
@@ -162,12 +163,12 @@ void Game::hit()
         {
             if (player.hasSplitHand())
             {
-                activeHand = ActiveHand::SPLIT;
+                activeHand = EActiveHand::SPLIT;
                 notify("SwitchToSplitHand");
             }
             else
             {
-                activeHand = ActiveHand::DONE;
+                activeHand = EActiveHand::DONE;
                 dealerHasHiddenCard = false;
                 dealerPlay();
                 evaluateHands();
@@ -176,7 +177,7 @@ void Game::hit()
             }
         }
     }
-    else if (activeHand == ActiveHand::SPLIT)
+    else if (activeHand == EActiveHand::SPLIT)
     {
         if (auto c = deckPtr->draw())
         {
@@ -186,7 +187,7 @@ void Game::hit()
 
         if (player.getSplitHand().isBust())
         {
-            activeHand = ActiveHand::DONE;
+            activeHand = EActiveHand::DONE;
             dealerHasHiddenCard = false;
             dealerPlay();
             evaluateHands();
@@ -204,7 +205,7 @@ void Game::stand()
     {
         if (dealerBlackjack || isBlackjack(player.getMainHand()))
         {
-            activeHand = ActiveHand::DONE;
+            activeHand = EActiveHand::DONE;
             dealerHasHiddenCard = false;
             dealerPlay();
             evaluateHands();
@@ -214,14 +215,14 @@ void Game::stand()
         }
     }
 
-    if (activeHand == ActiveHand::MAIN && player.hasSplitHand())
+    if (activeHand == EActiveHand::MAIN && player.hasSplitHand())
     {
-        activeHand = ActiveHand::SPLIT;
+        activeHand = EActiveHand::SPLIT;
         notify("SwitchToSplitHand");
         return;
     }
 
-    activeHand = ActiveHand::DONE;
+    activeHand = EActiveHand::DONE;
     dealerHasHiddenCard = false;
 
     dealerPlay();
@@ -265,7 +266,7 @@ bool Game::requestDoubleDown()
 
     if (!player.doubleDown()) return false;
 
-    if (activeHand == ActiveHand::MAIN)
+    if (activeHand == EActiveHand::MAIN)
     {
         if (auto c = deckPtr->draw())
         {
@@ -273,7 +274,7 @@ bool Game::requestDoubleDown()
             notify("PlayerCardMain");
         }
     }
-    else if (activeHand == ActiveHand::SPLIT)
+    else if (activeHand == EActiveHand::SPLIT)
     {
         if (auto c = deckPtr->draw())
         {
@@ -299,7 +300,7 @@ bool Game::requestInsurance()
 
         if (dealerBlackjack)
         {
-            activeHand = ActiveHand::DONE;
+            activeHand = EActiveHand::DONE;
             dealerHasHiddenCard = false;
             dealerPlay();
             evaluateHands();

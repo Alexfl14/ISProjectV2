@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include "IHand.h"
-#include "IObserver.h"
+#include "ISubject.h"
 #include "GameState.h"
 
 class IGame : public ISubject {

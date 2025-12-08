@@ -3,14 +3,11 @@
 
 #include <string>
 #include <memory>
-
+#include "enums/EWindowState.h"
 class MainMenu;
 class GameWindow;
 
-enum class WindowState {
-    MainMenu,
-    Game
-};
+
 
 class MainWindow {
 public:
@@ -29,7 +26,7 @@ private:
     void draw();
     void cleanup();
 
-    WindowState m_currentState;
+    EWindowState m_currentState;
     std::unique_ptr<MainMenu> m_mainMenu;
     std::unique_ptr<GameWindow> m_gameWindow;
     bool m_shouldClose;

@@ -11,6 +11,8 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include "enums/EActiveHand.h"
+#include "interfaces/IObserver.h"
 
 class Game : public IGame {
 private:
@@ -20,8 +22,7 @@ private:
     Hand dealerHand;
     std::unique_ptr<IDealerStrategy> dealerStrategy;
 
-    enum class ActiveHand { NONE, MAIN, SPLIT, DONE };
-    ActiveHand activeHand = ActiveHand::NONE;
+    EActiveHand activeHand = EActiveHand::NONE;
 
     bool roundStarted = false;
     bool gameOver = false;

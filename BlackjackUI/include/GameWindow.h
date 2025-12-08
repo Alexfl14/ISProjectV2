@@ -6,9 +6,7 @@
 #include "interfaces/ICard.h"
 #include "raylib.h"
 #include <string>
-#include <memory>
-#include <functional>
-
+#include "enums/EGamePhase.h"
 class MainWindow;
 
 class GameWindow : public IObserver {
@@ -60,12 +58,8 @@ private:
     std::string m_playerName;
     int m_currentBetAmount;
     
-    enum class GamePhase {
-        Betting,
-        Playing,
-        Result
-    };
-    GamePhase m_currentPhase;
+
+    EGamePhase m_currentPhase;
 
     // UI state
     bool m_hitEnabled;

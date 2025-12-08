@@ -4,7 +4,7 @@
 #include "raylib.h"
 
 MainWindow::MainWindow()
-    : m_currentState(WindowState::MainMenu)
+    : m_currentState(EWindowState::MainMenu)
     , m_shouldClose(false)
 {
     init();
@@ -35,12 +35,12 @@ void MainWindow::run() {
 
 void MainWindow::update() {
     switch (m_currentState) {
-        case WindowState::MainMenu:
+        case EWindowState::MainMenu:
             if (m_mainMenu) {
                 m_mainMenu->update();
             }
             break;
-        case WindowState::Game:
+        case EWindowState::Game:
             if (m_gameWindow) {
                 m_gameWindow->update();
             }
@@ -53,12 +53,12 @@ void MainWindow::draw() {
     ClearBackground(CLITERAL(Color){10, 15, 30, 255}); // #0a0f1e
     
     switch (m_currentState) {
-        case WindowState::MainMenu:
+        case EWindowState::MainMenu:
             if (m_mainMenu) {
                 m_mainMenu->draw();
             }
             break;
-        case WindowState::Game:
+        case EWindowState::Game:
             if (m_gameWindow) {
                 m_gameWindow->draw();
             }
@@ -76,11 +76,11 @@ void MainWindow::handleStartNewGame(const std::string& playerName) {
     
     // Create new game window
     m_gameWindow = std::make_unique<GameWindow>(playerName, this);
-    m_currentState = WindowState::Game;
+    m_currentState = EWindowState::Game;
 }
 
 void MainWindow::returnToMainMenu() {
-    m_currentState = WindowState::MainMenu;
+    m_currentState = EWindowState::MainMenu;
     // Keep game window alive in case player wants to continue
 }
 
