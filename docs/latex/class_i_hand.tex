@@ -1,0 +1,122 @@
+\doxysection{IHand Class Reference}
+\hypertarget{class_i_hand}{}\label{class_i_hand}\index{IHand@{IHand}}
+
+
+{\ttfamily \#include $<$IHand.\+h$>$}
+
+Inheritance diagram for IHand\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_hand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_hand_a0296f01d46c7f01cb7ca06ca1aa971ee}{\texorpdfstring{$\sim$}{\string~}\+IHand}} ()=default
+\item 
+virtual std\+::size\+\_\+t \mbox{\hyperlink{class_i_hand_a07375f3d800b1e663a91bf85ee41dab6}{get\+Card\+Count}} () const =0
+\item 
+virtual const \mbox{\hyperlink{class_i_card}{ICard}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_i_hand_aff823a19d214681567e0e817e84104d7}{get\+Card}} (std\+::size\+\_\+t index) const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_hand_a8669bc88fc76586096af3bceda283b25}{add\+Card}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_card}{ICard}} $>$ card)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_hand_a44a1af76cad47c0dcc2706b9d9ccd552}{remove\+Card\+At}} (std\+::size\+\_\+t index)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_hand_ad86074f1fe63dcdaafe16347102a6312}{clear}} ()=0
+\item 
+virtual int \mbox{\hyperlink{class_i_hand_a776b088a8f9ca13daa80688f4eeb39e0}{get\+Total}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{class_i_hand_a82be0063d631e404b97b5740b9987dc3}{is\+Bust}} () const =0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_i_hand_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_hand_a0296f01d46c7f01cb7ca06ca1aa971ee}\index{IHand@{IHand}!````~IHand@{\texorpdfstring{$\sim$}{\string~}IHand}}
+\index{````~IHand@{\texorpdfstring{$\sim$}{\string~}IHand}!IHand@{IHand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IHand()}{\string~IHand()}}
+{\footnotesize\ttfamily \label{class_i_hand_a0296f01d46c7f01cb7ca06ca1aa971ee} 
+virtual IHand\+::\texorpdfstring{$\sim$}{\string~}\+IHand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_hand_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_hand_a8669bc88fc76586096af3bceda283b25}\index{IHand@{IHand}!addCard@{addCard}}
+\index{addCard@{addCard}!IHand@{IHand}}
+\doxysubsubsection{\texorpdfstring{addCard()}{addCard()}}
+{\footnotesize\ttfamily \label{class_i_hand_a8669bc88fc76586096af3bceda283b25} 
+virtual void IHand\+::add\+Card (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_card}{ICard}} $>$}]{card}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_hand_ac67060962bc1e572dfc5314930496e6c}{Hand}}.
+
+\Hypertarget{class_i_hand_ad86074f1fe63dcdaafe16347102a6312}\index{IHand@{IHand}!clear@{clear}}
+\index{clear@{clear}!IHand@{IHand}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_i_hand_ad86074f1fe63dcdaafe16347102a6312} 
+virtual void IHand\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_hand_ab17f33363dda63e4aa0f202fd13c31b2}{Hand}}.
+
+\Hypertarget{class_i_hand_aff823a19d214681567e0e817e84104d7}\index{IHand@{IHand}!getCard@{getCard}}
+\index{getCard@{getCard}!IHand@{IHand}}
+\doxysubsubsection{\texorpdfstring{getCard()}{getCard()}}
+{\footnotesize\ttfamily \label{class_i_hand_aff823a19d214681567e0e817e84104d7} 
+virtual const \mbox{\hyperlink{class_i_card}{ICard}} \texorpdfstring{$\ast$}{*} IHand\+::get\+Card (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_hand_aa0a4de7a36cf772ba82f53dfddf03ee2}{Hand}}.
+
+\Hypertarget{class_i_hand_a07375f3d800b1e663a91bf85ee41dab6}\index{IHand@{IHand}!getCardCount@{getCardCount}}
+\index{getCardCount@{getCardCount}!IHand@{IHand}}
+\doxysubsubsection{\texorpdfstring{getCardCount()}{getCardCount()}}
+{\footnotesize\ttfamily \label{class_i_hand_a07375f3d800b1e663a91bf85ee41dab6} 
+virtual std\+::size\+\_\+t IHand\+::get\+Card\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_hand_a4c8471e146aca0d0dd7ff3c9d2d4a0dd}{Hand}}.
+
+\Hypertarget{class_i_hand_a776b088a8f9ca13daa80688f4eeb39e0}\index{IHand@{IHand}!getTotal@{getTotal}}
+\index{getTotal@{getTotal}!IHand@{IHand}}
+\doxysubsubsection{\texorpdfstring{getTotal()}{getTotal()}}
+{\footnotesize\ttfamily \label{class_i_hand_a776b088a8f9ca13daa80688f4eeb39e0} 
+virtual int IHand\+::get\+Total (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_hand_a0611c1d3c97fdaf12f3b669290b55d29}{Hand}}.
+
+\Hypertarget{class_i_hand_a82be0063d631e404b97b5740b9987dc3}\index{IHand@{IHand}!isBust@{isBust}}
+\index{isBust@{isBust}!IHand@{IHand}}
+\doxysubsubsection{\texorpdfstring{isBust()}{isBust()}}
+{\footnotesize\ttfamily \label{class_i_hand_a82be0063d631e404b97b5740b9987dc3} 
+virtual bool IHand\+::is\+Bust (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_hand_af9b46fb047b69b0163bb2d616e39d84f}{Hand}}.
+
+\Hypertarget{class_i_hand_a44a1af76cad47c0dcc2706b9d9ccd552}\index{IHand@{IHand}!removeCardAt@{removeCardAt}}
+\index{removeCardAt@{removeCardAt}!IHand@{IHand}}
+\doxysubsubsection{\texorpdfstring{removeCardAt()}{removeCardAt()}}
+{\footnotesize\ttfamily \label{class_i_hand_a44a1af76cad47c0dcc2706b9d9ccd552} 
+virtual void IHand\+::remove\+Card\+At (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_hand_a661dbc95863f51fc12c5a053566432cd}{Hand}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Blackjack\+Core/include/interfaces/\mbox{\hyperlink{_i_hand_8h}{IHand.\+h}}\end{DoxyCompactItemize}

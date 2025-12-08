@@ -1,0 +1,80 @@
+\doxysection{Game.\+h}
+\hypertarget{_game_8h_source}{}\label{_game_8h_source}\index{BlackjackCore/include/Game.h@{BlackjackCore/include/Game.h}}
+\mbox{\hyperlink{_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_game_8h}{interfaces/IGame.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_deck_8h}{interfaces/IDeck.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_dealer_strategy_8h}{interfaces/IDealerStrategy.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_game_result_8h}{enums/EGameResult.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_deck_8h}{Deck.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_player_8h}{interfaces/IPlayer.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hand_8h}{Hand.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_ab5e6a322a4cc63c0f0f14602de5819d0}{Game}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_game}{IGame}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_i_deck}{IDeck}}*\ deckPtr;}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_deck}{Deck}}\ realDeck;}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ player;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_hand}{Hand}}\ dealerHand;}
+\DoxyCodeLine{00021\ \ \ \ \ std::unique\_ptr<IDealerStrategy>\ dealerStrategy;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ActiveHand\ \{\ NONE,\ MAIN,\ SPLIT,\ DONE\ \};}
+\DoxyCodeLine{00024\ \ \ \ \ ActiveHand\ activeHand\ =\ ActiveHand::NONE;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ roundStarted\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ gameOver\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ splitAllowed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ insuranceAllowed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ doubleAllowed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ dealerHasHiddenCard\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ dealerBlackjack\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ad}{EGameResult}}\ mainResult\ =\ \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ada6adf97f83acf6453d4a6a4b1070f3754}{EGameResult::None}};}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ad}{EGameResult}}\ splitResult\ =\ \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ada6adf97f83acf6453d4a6a4b1070f3754}{EGameResult::None}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<IObserver*>\ observers;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ notify(\textcolor{keyword}{const}\ std::string\&\ event);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ dealInitialCards();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ dealerPlay();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ evaluateHands();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ isBlackjack(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_hand}{IHand}}\&\ hand)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_game_ab5e6a322a4cc63c0f0f14602de5819d0}{Game}}(\textcolor{keywordtype}{int}\ initialBalance\ =\ 1000);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_adc88091effb78000dec048d014cedc61}{forceDeck}}(\mbox{\hyperlink{class_i_deck}{IDeck}}*\ fake);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_aecdaf969cc31d48057c1b4a1995e4924}{setDealerStrategy}}(std::unique\_ptr<IDealerStrategy>\ strategy);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a3226df12ee10fd049a7d22b66bd5e7e5}{addObserver}}(\mbox{\hyperlink{class_i_observer}{IObserver}}*\ observer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ae9aa700c7de3e34c2964bd1fa8307ccf}{removeObserver}}(\mbox{\hyperlink{class_i_observer}{IObserver}}*\ observer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_add85e6518c53c8fac9e9f21d47d72c8b}{notifyObservers}}(\textcolor{keyword}{const}\ std::string\&\ eventName)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a8bb08cfeb94e592e993e8c55c369498d}{startGame}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a5aa5cdd90682262b7ad9b959b0b659b2}{hit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a27a94b492a5996289bce6de68e8ff28d}{stand}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a70619d2cf0a6447303bf0c5542bbb682}{reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_a84b16d04a05673674b2a9ee375de0b28}{requestBet}}(\textcolor{keywordtype}{int}\ amount)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_ab76cb37e82e51ee6d5d4a1269055d7e5}{requestClearBet}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_ae7ef996605eb71eca8632a4ce61374cc}{requestSplit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_a051891e2d3e2f1d3e71e5ffd02ac356d}{requestDoubleDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_a7dc57abf4608e551dc4b1deadc4b248f}{requestInsurance}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_hand}{IHand}}\&\ \mbox{\hyperlink{class_game_a0a1cf9bf4b551faa0f31c6661a121f3f}{getPlayerHand}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_hand}{IHand}}\&\ \mbox{\hyperlink{class_game_ae2dbc3250838a0868151010f9b589ce7}{getDealerHand}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{struct_game_state}{GameState}}\ \mbox{\hyperlink{class_game_a9baf2080024009dde1e257925bd08ab1}{getState}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_i_player}{IPlayer}}\&\ \mbox{\hyperlink{class_game_a241053bf0ed4580996e6b6ba14d4acee}{getPlayer}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_player}{IPlayer}}\&\ \mbox{\hyperlink{class_game_a241053bf0ed4580996e6b6ba14d4acee}{getPlayer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,41 @@
+\doxysection{IPlayer.\+h}
+\hypertarget{_i_player_8h_source}{}\label{_i_player_8h_source}\index{BlackjackCore/include/interfaces/IPlayer.h@{BlackjackCore/include/interfaces/IPlayer.h}}
+\mbox{\hyperlink{_i_player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_hand_8h}{IHand.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_player}{IPlayer}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_player_a51fad967141534e6267e19ff3a76bc69}{\string~IPlayer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_player_a7833ec3862b715502bbb849a4f814340}{getBalance}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_player_a3623e68a6034cb7a3728279cf387b0d2}{getCurrentBet}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_player_a0532a332ab4f065cd8e502df2c20c7ec}{getInsuranceBet}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_player_a08e8b4541673b8521837deb0286c5263}{addToBalance}}(\textcolor{keywordtype}{int}\ amount)\ =\ 0;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_player_a2ffdb67915cac57348f10737ea11cd96}{bet}}(\textcolor{keywordtype}{int}\ amount)\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_player_a120ffcff4ba32455b67241e8a1ca704a}{clearBet}}()\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_player_a13b0597538dd3f2005a52fe809778b82}{takeInsurance}}()\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_player_acc3b02e1e31ab29afd13414c227e5ee6}{doubleDown}}()\ =\ 0;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_player_adc433ad3e43c6a84da0ef21a8a202c98}{canSplit}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_player_a25a47dd5ccc2987c40db05d8c5f33d26}{performSplit}}()\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_player_a983a15c2754b0e9ab6dc7497b064e911}{hasSplitHand}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_hand}{IHand}}\&\ \mbox{\hyperlink{class_i_player_acb84f2b3955c2c693c69acdc00bcbc1c}{getMainHand}}()\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_hand}{IHand}}\&\ \mbox{\hyperlink{class_i_player_a9ef223d1c4f0f8097d9bf91e7bab9115}{getSplitHand}}()\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_hand}{IHand}}\&\ \mbox{\hyperlink{class_i_player_af83cb8f0f65dacfe590b5d3866a089f5}{getMainHand}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_hand}{IHand}}\&\ \mbox{\hyperlink{class_i_player_abf1c1b2241d8451d396b56ba1510c106}{getSplitHand}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_player_ac805a3b5643a54aca0006b934c53b8f2}{win}}()\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_player_a1f47f3680902b539c8e84506b535f0f4}{blackjackWin}}()\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_player_a6eafb99a8725893596e14e6a10abac39}{push}}()\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_player_a666a7ff967123d10f9ca340ab8698bc2}{lose}}()\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_player_ae5a3650bc6764c3595b469377966c90b}{resolveInsurance}}(\textcolor{keywordtype}{bool}\ dealerHasBlackjack)\ =\ 0;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_player_a526abf61a93a60563c1ca8d53dccc3cc}{resetForNewRound}}()\ =\ 0;}
+\DoxyCodeLine{00035\ \};}
+
+\end{DoxyCode}

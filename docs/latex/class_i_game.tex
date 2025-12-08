@@ -1,0 +1,193 @@
+\doxysection{IGame Class Reference}
+\hypertarget{class_i_game}{}\label{class_i_game}\index{IGame@{IGame}}
+
+
+{\ttfamily \#include $<$IGame.\+h$>$}
+
+Inheritance diagram for IGame\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_game}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_game_a91b14c1b6019364120d5c5e4d4c64414}{\texorpdfstring{$\sim$}{\string~}\+IGame}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_game_af174e89498832afc7458be23a6ebc3a6}{start\+Game}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_a19ef043eb7d0e90742fc5b21511951bd}{hit}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_af3bd5683190ff135b7a32d3442f4a45e}{stand}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_a45a6211515827c108c0456b0230a547c}{reset}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_game_addc155ad6815c251b174f5cc9f9a3656}{request\+Bet}} (int amount)=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_game_a321d67d99b827d51c36d462daf4655ba}{request\+Clear\+Bet}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_game_aa1c7f24f74c4431fa108eb12023e1d98}{request\+Split}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_game_a7b337d5287811f3bac974646c2165d1a}{request\+Double\+Down}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_game_a62913be1cfdf4f788f65f5dd522f1602}{request\+Insurance}} ()=0
+\item 
+virtual const \mbox{\hyperlink{class_i_hand}{IHand}} \& \mbox{\hyperlink{class_i_game_a1de26bf78f1a2391e4eabe061fb10ed8}{get\+Player\+Hand}} () const =0
+\item 
+virtual const \mbox{\hyperlink{class_i_hand}{IHand}} \& \mbox{\hyperlink{class_i_game_a61276ba36ba7a0b2cd760d4c67bf56dd}{get\+Dealer\+Hand}} () const =0
+\item 
+virtual \mbox{\hyperlink{struct_game_state}{Game\+State}} \mbox{\hyperlink{class_i_game_a44de7e08e7ee294be051445a84306299}{get\+State}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_subject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a19c9173958999fa63ae06875a3efbc3d}{add\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}observer)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}{remove\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}observer)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_aa88e49690054283f48da4efbd56d9af4}{notify\+Observers}} (const std\+::string \&event\+Name)=0
+\item 
+virtual \mbox{\hyperlink{class_i_subject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_i_game_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_game_a91b14c1b6019364120d5c5e4d4c64414}\index{IGame@{IGame}!````~IGame@{\texorpdfstring{$\sim$}{\string~}IGame}}
+\index{````~IGame@{\texorpdfstring{$\sim$}{\string~}IGame}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IGame()}{\string~IGame()}}
+{\footnotesize\ttfamily \label{class_i_game_a91b14c1b6019364120d5c5e4d4c64414} 
+virtual IGame\+::\texorpdfstring{$\sim$}{\string~}\+IGame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_game_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_game_a61276ba36ba7a0b2cd760d4c67bf56dd}\index{IGame@{IGame}!getDealerHand@{getDealerHand}}
+\index{getDealerHand@{getDealerHand}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{getDealerHand()}{getDealerHand()}}
+{\footnotesize\ttfamily \label{class_i_game_a61276ba36ba7a0b2cd760d4c67bf56dd} 
+virtual const \mbox{\hyperlink{class_i_hand}{IHand}} \& IGame\+::get\+Dealer\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_ae2dbc3250838a0868151010f9b589ce7}{Game}}.
+
+\Hypertarget{class_i_game_a1de26bf78f1a2391e4eabe061fb10ed8}\index{IGame@{IGame}!getPlayerHand@{getPlayerHand}}
+\index{getPlayerHand@{getPlayerHand}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{getPlayerHand()}{getPlayerHand()}}
+{\footnotesize\ttfamily \label{class_i_game_a1de26bf78f1a2391e4eabe061fb10ed8} 
+virtual const \mbox{\hyperlink{class_i_hand}{IHand}} \& IGame\+::get\+Player\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a0a1cf9bf4b551faa0f31c6661a121f3f}{Game}}.
+
+\Hypertarget{class_i_game_a44de7e08e7ee294be051445a84306299}\index{IGame@{IGame}!getState@{getState}}
+\index{getState@{getState}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \label{class_i_game_a44de7e08e7ee294be051445a84306299} 
+virtual \mbox{\hyperlink{struct_game_state}{Game\+State}} IGame\+::get\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a9baf2080024009dde1e257925bd08ab1}{Game}}.
+
+\Hypertarget{class_i_game_a19ef043eb7d0e90742fc5b21511951bd}\index{IGame@{IGame}!hit@{hit}}
+\index{hit@{hit}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily \label{class_i_game_a19ef043eb7d0e90742fc5b21511951bd} 
+virtual void IGame\+::hit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a5aa5cdd90682262b7ad9b959b0b659b2}{Game}}.
+
+\Hypertarget{class_i_game_addc155ad6815c251b174f5cc9f9a3656}\index{IGame@{IGame}!requestBet@{requestBet}}
+\index{requestBet@{requestBet}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{requestBet()}{requestBet()}}
+{\footnotesize\ttfamily \label{class_i_game_addc155ad6815c251b174f5cc9f9a3656} 
+virtual bool IGame\+::request\+Bet (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a84b16d04a05673674b2a9ee375de0b28}{Game}}.
+
+\Hypertarget{class_i_game_a321d67d99b827d51c36d462daf4655ba}\index{IGame@{IGame}!requestClearBet@{requestClearBet}}
+\index{requestClearBet@{requestClearBet}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{requestClearBet()}{requestClearBet()}}
+{\footnotesize\ttfamily \label{class_i_game_a321d67d99b827d51c36d462daf4655ba} 
+virtual bool IGame\+::request\+Clear\+Bet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_ab76cb37e82e51ee6d5d4a1269055d7e5}{Game}}.
+
+\Hypertarget{class_i_game_a7b337d5287811f3bac974646c2165d1a}\index{IGame@{IGame}!requestDoubleDown@{requestDoubleDown}}
+\index{requestDoubleDown@{requestDoubleDown}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{requestDoubleDown()}{requestDoubleDown()}}
+{\footnotesize\ttfamily \label{class_i_game_a7b337d5287811f3bac974646c2165d1a} 
+virtual bool IGame\+::request\+Double\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a051891e2d3e2f1d3e71e5ffd02ac356d}{Game}}.
+
+\Hypertarget{class_i_game_a62913be1cfdf4f788f65f5dd522f1602}\index{IGame@{IGame}!requestInsurance@{requestInsurance}}
+\index{requestInsurance@{requestInsurance}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{requestInsurance()}{requestInsurance()}}
+{\footnotesize\ttfamily \label{class_i_game_a62913be1cfdf4f788f65f5dd522f1602} 
+virtual bool IGame\+::request\+Insurance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a7dc57abf4608e551dc4b1deadc4b248f}{Game}}.
+
+\Hypertarget{class_i_game_aa1c7f24f74c4431fa108eb12023e1d98}\index{IGame@{IGame}!requestSplit@{requestSplit}}
+\index{requestSplit@{requestSplit}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{requestSplit()}{requestSplit()}}
+{\footnotesize\ttfamily \label{class_i_game_aa1c7f24f74c4431fa108eb12023e1d98} 
+virtual bool IGame\+::request\+Split (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_ae7ef996605eb71eca8632a4ce61374cc}{Game}}.
+
+\Hypertarget{class_i_game_a45a6211515827c108c0456b0230a547c}\index{IGame@{IGame}!reset@{reset}}
+\index{reset@{reset}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_i_game_a45a6211515827c108c0456b0230a547c} 
+virtual void IGame\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a70619d2cf0a6447303bf0c5542bbb682}{Game}}.
+
+\Hypertarget{class_i_game_af3bd5683190ff135b7a32d3442f4a45e}\index{IGame@{IGame}!stand@{stand}}
+\index{stand@{stand}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{stand()}{stand()}}
+{\footnotesize\ttfamily \label{class_i_game_af3bd5683190ff135b7a32d3442f4a45e} 
+virtual void IGame\+::stand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a27a94b492a5996289bce6de68e8ff28d}{Game}}.
+
+\Hypertarget{class_i_game_af174e89498832afc7458be23a6ebc3a6}\index{IGame@{IGame}!startGame@{startGame}}
+\index{startGame@{startGame}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{startGame()}{startGame()}}
+{\footnotesize\ttfamily \label{class_i_game_af174e89498832afc7458be23a6ebc3a6} 
+virtual void IGame\+::start\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a8bb08cfeb94e592e993e8c55c369498d}{Game}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Blackjack\+Core/include/interfaces/\mbox{\hyperlink{_i_game_8h}{IGame.\+h}}\end{DoxyCompactItemize}

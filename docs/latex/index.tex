@@ -1,0 +1,85 @@
+\chapter{Blackjack Game }
+\hypertarget{index}{}\label{index}\index{Blackjack Game@{Blackjack Game}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+
+
+A C++ implementation of the classic Blackjack card game with a graphical user interface built using Raylib.\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Object-\/oriented design with proper separation of concerns
+\item Core game logic (Blackjack\+Core)
+\item Graphical user interface (Blackjack\+UI) using Raylib
+\item Comprehensive unit tests using Google Test
+\item Observer pattern implementation for game state updates
+\item Cross-\/platform support (Windows)
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Project Structure}{Project Structure}}\label{index_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{blackjack/}
+\DoxyCodeLine{├──\ BlackjackCore/\ \ \ \ \ \ \ \#\ Core\ game\ logic\ and\ engine}
+\DoxyCodeLine{│\ \ \ ├──\ include/\ \ \ \ \ \ \ \ \ \#\ Header\ files}
+\DoxyCodeLine{│\ \ \ └──\ src/\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Implementation\ files}
+\DoxyCodeLine{├──\ BlackjackUI/\ \ \ \ \ \ \ \ \ \#\ User\ interface}
+\DoxyCodeLine{│\ \ \ ├──\ include/\ \ \ \ \ \ \ \ \ \#\ UI\ header\ files}
+\DoxyCodeLine{│\ \ \ ├──\ src/\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ UI\ implementation}
+\DoxyCodeLine{│\ \ \ └──\ main.cpp\ \ \ \ \ \ \ \ \ \#\ Entry\ point}
+\DoxyCodeLine{└──\ BlackjackTests/\ \ \ \ \ \ \#\ Unit\ tests}
+\DoxyCodeLine{\ \ \ \ └──\ src/\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Test\ files}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Dependencies}{Dependencies}}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item CMake 3.\+20+
+\item C++17 compiler
+\item vcpkg (for package management)
+\item Raylib (graphics library)
+\item Google Test (for testing)
+\item nlohmann/json (JSON parsing)
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Building}{Building}}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{index_autotoc_md5}
+
+\begin{DoxyEnumerate}
+\item Install Visual Studio 2022 with C++ development tools
+\item Install vcpkg
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Build Instructions}{Build Instructions}}\label{index_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Configure\ with\ CMake}
+\DoxyCodeLine{cmake\ -\/B\ build\ -\/S\ .}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Build}
+\DoxyCodeLine{cmake\ -\/-\/build\ build\ -\/-\/config\ Debug}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Run\ tests}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{ctest\ -\/C\ Debug}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{Running}{Running}}\label{index_autotoc_md7}
+After building, run the executable\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./build/bin/BlackjackUI.exe}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{Testing}{Testing}}\label{index_autotoc_md8}
+The project includes comprehensive unit tests for\+:
+\begin{DoxyItemize}
+\item \doxylink{class_card}{Card} mechanics
+\item \doxylink{class_deck}{Deck} operations
+\item \doxylink{class_hand}{Hand} calculations
+\item \doxylink{class_player}{Player} actions
+\item \doxylink{class_game}{Game} flow
+\end{DoxyItemize}
+
+Run tests using\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{ctest\ -\/C\ Debug\ -\/-\/verbose}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md9}
+This project is part of academic coursework. 

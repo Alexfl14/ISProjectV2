@@ -1,0 +1,30 @@
+\doxysection{IHand.\+h}
+\hypertarget{_i_hand_8h_source}{}\label{_i_hand_8h_source}\index{BlackjackCore/include/interfaces/IHand.h@{BlackjackCore/include/interfaces/IHand.h}}
+\mbox{\hyperlink{_i_hand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_card_8h}{ICard.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_hand}{IHand}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_hand_a0296f01d46c7f01cb7ca06ca1aa971ee}{\string~IHand}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ std::size\_t\ \mbox{\hyperlink{class_i_hand_a07375f3d800b1e663a91bf85ee41dab6}{getCardCount}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_card}{ICard}}*\ \mbox{\hyperlink{class_i_hand_aff823a19d214681567e0e817e84104d7}{getCard}}(std::size\_t\ index)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_hand_a8669bc88fc76586096af3bceda283b25}{addCard}}(std::unique\_ptr<ICard>\ card)\ =\ 0;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_hand_a44a1af76cad47c0dcc2706b9d9ccd552}{removeCardAt}}(std::size\_t\ index)\ =\ 0;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_hand_ad86074f1fe63dcdaafe16347102a6312}{clear}}()\ =\ 0;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_hand_a776b088a8f9ca13daa80688f4eeb39e0}{getTotal}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_hand_a82be0063d631e404b97b5740b9987dc3}{isBust}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00024\ \};}
+
+\end{DoxyCode}

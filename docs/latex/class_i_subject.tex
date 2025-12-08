@@ -1,0 +1,74 @@
+\doxysection{ISubject Class Reference}
+\hypertarget{class_i_subject}{}\label{class_i_subject}\index{ISubject@{ISubject}}
+
+
+{\ttfamily \#include $<$IObserver.\+h$>$}
+
+Inheritance diagram for ISubject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_subject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a19c9173958999fa63ae06875a3efbc3d}{add\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}observer)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}{remove\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}observer)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_aa88e49690054283f48da4efbd56d9af4}{notify\+Observers}} (const std\+::string \&event\+Name)=0
+\item 
+virtual \mbox{\hyperlink{class_i_subject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_i_subject_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_subject_ae7264a3f132816d45581a1b31845ecac}\index{ISubject@{ISubject}!````~ISubject@{\texorpdfstring{$\sim$}{\string~}ISubject}}
+\index{````~ISubject@{\texorpdfstring{$\sim$}{\string~}ISubject}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ISubject()}{\string~ISubject()}}
+{\footnotesize\ttfamily \label{class_i_subject_ae7264a3f132816d45581a1b31845ecac} 
+virtual ISubject\+::\texorpdfstring{$\sim$}{\string~}\+ISubject (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_subject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_subject_a19c9173958999fa63ae06875a3efbc3d}\index{ISubject@{ISubject}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily \label{class_i_subject_a19c9173958999fa63ae06875a3efbc3d} 
+virtual void ISubject\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a3226df12ee10fd049a7d22b66bd5e7e5}{Game}}.
+
+\Hypertarget{class_i_subject_aa88e49690054283f48da4efbd56d9af4}\index{ISubject@{ISubject}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily \label{class_i_subject_aa88e49690054283f48da4efbd56d9af4} 
+virtual void ISubject\+::notify\+Observers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_add85e6518c53c8fac9e9f21d47d72c8b}{Game}}.
+
+\Hypertarget{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}\index{ISubject@{ISubject}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily \label{class_i_subject_a9c3c18703e8588c15ab1361137a8d449} 
+virtual void ISubject\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_ae9aa700c7de3e34c2964bd1fa8307ccf}{Game}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Blackjack\+Core/include/interfaces/\mbox{\hyperlink{_i_observer_8h}{IObserver.\+h}}\end{DoxyCompactItemize}

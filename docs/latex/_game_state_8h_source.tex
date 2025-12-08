@@ -1,0 +1,30 @@
+\doxysection{Game\+State.\+h}
+\hypertarget{_game_state_8h_source}{}\label{_game_state_8h_source}\index{BlackjackCore/include/GameState.h@{BlackjackCore/include/GameState.h}}
+\mbox{\hyperlink{_game_state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_game_result_8h}{enums/EGameResult.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_game_state}{GameState}}\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_game_state_a9410695cad5f0a5f9fcc368125cbe8b7}{mainTotal}}\ =\ 0;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_game_state_a9883bf8218fe4db57474c54d1f059545}{splitTotal}}\ =\ -\/1;\ \ \ \ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_game_state_a29eae32b71776f9c9b28b172216565d7}{dealerTotal}}\ =\ 0;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_game_state_a9a1a163f9df3f1a0f2baed1b5c8fe49a}{splitAllowed}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_game_state_a1b0e3e3c017605518e223746b693f2f9}{doubleAllowed}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_game_state_a70ceb347f79cc165aa4bcbcaeee2c6a9}{insuranceAllowed}}\ =\ \textcolor{keyword}{false};\ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_game_state_ab1c23de6b5105ffa23cad0180e68a203}{splitActive}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_game_state_ac7c2d4506ab7d4d10624ba9e67d24b9e}{roundStarted}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_game_state_a5091485bf9de86a2b7e6882c9e3f51dd}{gameOver}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_game_state_a458c6dde03dafc677e16e186933cd442}{dealerHidden}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ad}{EGameResult}}\ \mbox{\hyperlink{struct_game_state_aac24819374a51d492a3e9c0e3c363afb}{resultMain}}\ =\ \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ada6adf97f83acf6453d4a6a4b1070f3754}{EGameResult::None}};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ad}{EGameResult}}\ \mbox{\hyperlink{struct_game_state_a6c45f2b6916a642800c0434aa78723c0}{resultSplit}}\ =\ \mbox{\hyperlink{_e_game_result_8h_a15fa86d5c99405e90752f5b37e3934ada6adf97f83acf6453d4a6a4b1070f3754}{EGameResult::None}};}
+\DoxyCodeLine{00024\ \};}
+
+\end{DoxyCode}

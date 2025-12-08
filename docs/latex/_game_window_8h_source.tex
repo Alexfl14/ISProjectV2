@@ -1,0 +1,93 @@
+\doxysection{Game\+Window.\+h}
+\hypertarget{_game_window_8h_source}{}\label{_game_window_8h_source}\index{BlackjackUI/include/GameWindow.h@{BlackjackUI/include/GameWindow.h}}
+\mbox{\hyperlink{_game_window_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMEWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMEWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_8h}{Game.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_observer_8h}{interfaces/IObserver.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_card_8h}{interfaces/ICard.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_window_a1228c12b6c149d7e8c8583a8a924e274}{GameWindow}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_observer}{IObserver}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_game_window_a1228c12b6c149d7e8c8583a8a924e274}{GameWindow}}(\textcolor{keyword}{const}\ std::string\&\ playerName,\ \mbox{\hyperlink{class_main_window}{MainWindow}}*\ mainWindow);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_game_window_aab261e8734cea6eae10320094a190318}{\string~GameWindow}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_window_a91e9584fa74547af5f20243bd4a13459}{update}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_window_a211bf3952bdee3fb35bc92705d3e781e}{draw}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ IObserver\ implementation}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_window_a47971b95dcf5d89fb0ff2ce552918668}{onNotify}}(\textcolor{keyword}{const}\ std::string\&\ eventName)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Game\ phases}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ showBettingPhase();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ showGameplayPhase();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ showResultPhase();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Input\ handlers}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ handleBettingInput();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ handleGameplayInput();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ handleResultInput();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Drawing\ functions}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBackground();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ drawTableFelt();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ drawPlayerInfo();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ drawDealerCards();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ drawPlayerCards();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBettingControls();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ drawGameControls();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ drawResultOverlay();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ drawCard(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_card}{ICard}}*\ card,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{bool}\ hidden\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ drawButton(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height,\ \textcolor{keywordtype}{bool}\ enabled,\ \textcolor{keywordtype}{bool}*\ clicked);}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ UI\ Updates}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ updateUI();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ updateBalanceDisplay();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ checkAvailableActions();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Helper\ functions}}
+\DoxyCodeLine{00054\ \ \ \ \ std::string\ getCardValueString(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_card}{ICard}}*\ card)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ getSuitSymbol(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_card}{ICard}}*\ card)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ Color\ getSuitColor(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_card}{ICard}}*\ card)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}*\ m\_mainWindow;}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}\ m\_game;}
+\DoxyCodeLine{00060\ \ \ \ \ std::string\ m\_playerName;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_currentBetAmount;}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{enum\ class}\ GamePhase\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ Betting,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ Playing,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Result}
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ \ \ \ \ GamePhase\ m\_currentPhase;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ UI\ state}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hitEnabled;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_standEnabled;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_doubleEnabled;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_splitEnabled;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_insuranceEnabled;}
+\DoxyCodeLine{00076\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ std::string\ m\_resultMessage;}
+\DoxyCodeLine{00078\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ UI\ Constants}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ CARD\_WIDTH\ =\ 80;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ CARD\_HEIGHT\ =\ 112;}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ CARD\_SPACING\ =\ 20;}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ BUTTON\_WIDTH\ =\ 120;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ BUTTON\_HEIGHT\ =\ 50;}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAMEWINDOW\_H}}
+
+\end{DoxyCode}
