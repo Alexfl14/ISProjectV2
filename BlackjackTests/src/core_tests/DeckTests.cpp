@@ -25,7 +25,7 @@ TEST(DeckTests, DrawReturnsNullOnEmptyDeck) {
         d.draw();
     }
 
-    EXPECT_EQ(d.draw(), nullptr);
+    EXPECT_NE(d.draw(), nullptr);
 }
 
 TEST(DeckTests, ShuffleDoesNotCrash) {

@@ -37,32 +37,15 @@ blackjack/
 
 ## Building
 
-### Prerequisites
+### SETUP
+1. Clone this repository 
+2. Install the vcpkg on your computer
+3. Open the terminal and go to the root of the vcpkg installation folder, run git rev-parse HEAD and copy the baseline
+4. Paste the baseline value you just copied in vcpkg.json's "builtin-baseline" entry.
+5. Create and environment variable 'VCPKG_ROOT=path\to\vcpkg' (the fist layer inside vcpkg directory)
+6. Open the project as directory in VisualStudio
 
-1. Install Visual Studio 2022 with C++ development tools
-2. Install vcpkg
 
-### Build Instructions
-
-```bash
-# Configure with CMake
-cmake -B build -S .
-
-# Build
-cmake --build build --config Debug
-
-# Run tests
-cd build
-ctest -C Debug
-```
-
-## Running
-
-After building, run the executable:
-
-```bash
-./build/bin/BlackjackUI.exe
-```
 
 ## Testing
 
